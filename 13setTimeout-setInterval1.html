@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="c1"></h1>
+
+    <button onclick="getText()">Click</button>
+
+    <script>
+
+        const h1_tag = document.getElementById('c1')
+        console.log(h1_tag)
+
+        x=0;
+        function getText()
+        {
+            if(x<=653)
+            {
+                h1_tag.innerHTML =x;//0
+                x++;//1
+            }
+        //    document.write("123")  //it will clear the screeen before execute only result will appear so avoid document.write in programs
+        
+
+        setInterval(getText,50)
+        // getText()
+        // getText()
+        // getText()
+        // getText()
+        }
+
+
+    </script>
+    
+</body>
+</html>

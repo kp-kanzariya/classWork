@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <h1 id="i1" onclick="test()">Hello</h1>
+  <div class="t1" onmouseenter="test()">DIV 1</div>
+  <p id="para" ondblclick="test()">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut facilis
+    debitis corrupti odio praesentium sint, quo accusamus nulla in non
+    excepturi iusto provident, soluta officia voluptatum eligendi, illum
+    asperiores earum!
+  </p>
+  <a href="xyz.html" id="a1">LINK</a>
+  <input onkeydown="test()" type="text" id="inp1" value="INPUT TEXT" onblur=" t()" />
+  <button onmouseleave="test()">sdf</button>
+  <img src="x.jpg" alt="Img Not Available" id="img1" />
+
+  <script>
+    h1 = document.getElementById("i1");
+
+    //    alert( inp1.value)
+    div1 = document.querySelector(".t1");
+    para1 = document.getElementById("para");
+    anc1 = document.getElementById("a1");
+
+    inp1 = document.getElementById("inp1");
+    img1 = document.getElementById("img1");
+
+    function test() {
+      para1.innerHTML = inp1.value;
+      para1.style.color = "red";
+      alert(img1.alt);
+    }
+
+    div1.innerHTML = img1.alt;
+
+    anc1.href = img1.alt;
+
+    function t() {
+      console.log(h1, div1, para1, anc1, inp1, img1);
+    }
+  </script>
+</body>
+
+</html>

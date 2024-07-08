@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // +,- (same)
+      // *,/,% (same) higher than +,-
+      // ()
+      //2+3*5/2-7%2
+      r1 = 4;
+    //   document.write(r1*r1);
+    document.write(r1*r1 + "<br>");//16
+    document.write(r1**4 + "<br>");//
+    document.write(Math.pow(r1,4) +"<br>");
+    document.write(Math.PI +"<br>");
+
+    xyz  = new Date();
+    document.write(xyz)
+
+
+      ex = 2 + 4 - 5 - 6 + 7; //9.something//0.05
+      document.write(ex + "<br>"); //
+
+      no1 = 34;
+      document.write(no1 + "<br>"); //34
+      document.write(++no1 + "<br>"); //35
+      document.write(no1++ + "<br>"); //35==> 36
+      document.write(--no1 + "<br>"); //35
+      document.write(no1-- + "<br>"); //35==> 34
+      document.write(no1++ + "<br>"); //34
+
+      // x=1;
+      // y =  (1<1 || 1==1) ? 1 : 2;
+      // document.write(y+"<br>")
+      // xyz = "are yaar"
+      //         y =  (1<1 || 1==1) ? xyz : abc;
+
+      //         document.write(y+"<br>")
+
+      y = !(1 <= 1) && !(1 >= 1) ? "xyz" : "abc";
+
+      document.write(y + "<br>");
+
+      p=1
+      q="1"
+
+    //   ==/!= : check values 
+    //   ===/!== : values along with type 
+
+
+      test = (p != q) ? "xyz" : "abc";
+
+      document.write(test + "<br>"); //xyz
+
+
+    </script>
+  </body>
+</html>

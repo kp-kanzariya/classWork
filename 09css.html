@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .xyz 
+        {
+            height: 100px;
+            width: 100px;background: lightblue;
+           
+        }
+
+        .abc 
+        {
+            font-size: 78px;
+        }
+
+        .test 
+        {
+            animation:test123 1s;
+        }
+
+        @keyframes test123 
+        {
+            from{ transform: translate(-300px,0);}
+            to{transform: translate(0px,0);}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- inline 
+    internal -->
+
+    <h1 id="i1"  onclick="testColor()">HELLO</h1>
+
+    <h2 class="t1">sdfs</h2>
+    <script>
+        x =  document.getElementById('i1');
+        y = document.querySelector('.t1'); //for one selector 
+
+        // y.className = "xyz abc"
+        //  y.className = "abc"
+
+        y.classList.add('xyz','abc')//add is method 
+
+        console.log(y)
+
+     
+   function testColor()
+   {
+    x.classList.add('test')
+        x.style.color = "#fff"
+        x.style.height = "100px"
+         x.style.width = "200px"
+          x.style.backgroundColor = "#000"
+          x.style.fontSize = "34px"
+   }
+   
+
+          console.log(x)
+
+    //    var = tag  
+    //    tag.method/function()
+    //    tag.attribute
+
+    </script>
+    
+</body>
+</html>

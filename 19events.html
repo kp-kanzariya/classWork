@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Mouse Events
+
+    click: Fired when a pointing device button (usually a mouse's left button) is pressed and released on an element.
+    dblclick: Fired when a pointing device button is clicked twice on an element.
+    mousedown: Fired when a pointing device button is pressed on an element.
+    mouseup: Fired when a pointing device button is released over an element.
+    mouseenter: Fired when a pointing device is moved onto the element that has the listener attached.
+    mouseleave: Fired when a pointing device is moved off the element that has the listener attached.
+    mousemove: Fired when a pointing device is moved while over an element.
+    mouseover: Fired when a pointing device is moved onto the element that has the listener attached or onto one of its children.
+    mouseout: Fired when a pointing device is moved off the element that has the listener attached or off one of its children.
+    contextmenu: Fired when the right button of the mouse is clicked (before the context menu is displayed).
+
+    Keyboard Events
+
+    keydown: Fired when a key is pressed down.
+    keyup: Fired when a key is released.
+    keypress: Fired when a key is pressed down and released (deprecated).
+
+    Form Events
+
+    focus: Fired when an element has received focus.
+    blur: Fired when an element has lost focus.
+    change: Fired for <input>, <select>, and <textarea> elements when the value changes.
+    input: Fired when the value of an <input>, <select>, or <textarea> element is changed.
+    submit: Fired when a form is submitted.
+    reset: Fired when a form is reset.
+
+Document Events
+
+    DOMContentLoaded: Fired when the initial HTML document has been completely loaded and parsed.
+    load: Fired when a resource and its dependent resources have finished loading.
+    unload: Fired when the document or a child resource is being unloaded.
+    beforeunload: Fired when the window, the document and its resources are about to be unloaded.
+
+Clipboard Events
+
+    copy: Fired when the user initiates a copy action.
+    cut: Fired when the user initiates a cut action.
+    paste: Fired when the user initiates a paste action.
+
+Drag and Drop Events
+
+    drag: Fired when an element or text selection is being dragged.
+    dragstart: Fired when the user starts dragging an element or text selection.
+    dragend: Fired when a drag operation is being ended.
+    dragenter: Fired when a dragged element or text selection enters a valid drop target.
+    dragover: Fired when a dragged element or text selection is being dragged over a valid drop target.
+    dragleave: Fired when a dragged element or text selection leaves a valid drop target.
+    drop: Fired when an element or text selection is dropped on a valid drop target.
+
+Touch Events (for mobile devices)
+
+    touchstart: Fired when one or more fingers touch the screen.
+    touchmove: Fired when one or more fingers move on the screen.
+    touchend: Fired when one or more fingers are removed from the screen.
+    touchcancel: Fired when a touch event is interrupted.
+
+Focus Events
+
+    focusin: Fired when an element is about to receive focus.
+    focusout: Fired when an element is about to lose focus.
+
+Pointer Events (for handling different input devices consistently)
+
+    pointerdown: Fired when a pointer becomes active.
+    pointerup: Fired when a pointer is no longer active.
+    pointermove: Fired when a pointer changes coordinates.
+    pointerenter: Fired when a pointer enters the bounding box of an element.
+    pointerleave: Fired when a pointer leaves the bounding box of an element.
+    pointerover: Fired when a pointer enters an element.
+    pointerout: Fired when a pointer leaves an element.
+    pointercancel: Fired when the browser determines that there is no longer any chance for the pointer to generate events.
+
+Miscellaneous Events
+
+    wheel: Fired when a wheel button of a pointing device (usually a mouse) is rotated.
+    resize: Fired when the document view is resized.
+    scroll: Fired when an element's scrollbar is being scrolled.
+    error: Fired when an error occurs while loading an external file.
+    animationstart: Fired when a CSS animation starts.
+    animationend: Fired when a CSS animation ends.
+    animationiteration: Fired when a CSS animation is repeated.
+    transitionstart: Fired when a CSS transition starts.
+    transitionend: Fired when a CSS transition completes.
+
+Example of Using addEventListener
+
+javascript
+
+
+This is a broad list of events that can be listened for using addEventListener, and it covers many of the typical interactions and actions that might occur in a web application.
+
+    Mouse : 
+    1. click 
+    2. dblclick 
+    3. enter,over
+    4, leave,out 
+    5. move
+
+    Keyboard :
+    1. keypress 
+    2. keydown 
+    3. keyup 
+
+    Form :
+    1. submit 
+    2. change 
+    3. blur 
+    4. focus 
+
+    Windows:
+    1.load 
+    2.unload 
+    3.resize 
+    4.scroll
+
+<script>
+    
+// Adding an event listener for the click event
+document.querySelector('button').addEventListener('click', function() {
+  alert('Button was clicked!');
+});
+
+// Adding an event listener for the input event
+document.querySelector('input').addEventListener('input', function() {
+  console.log('Input value changed:', this.value);
+});
+</script>
+    
+</body>
+</html>

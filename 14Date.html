@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h2 id="dt"></h2>
+      -->
+      <div id="dt"></div>
+      <button onclick="getDate()">Get Date</button>
+    <script>
+        function getDate() {
+            let xyz = new Date();
+            let date=document.getElementById('dt').innerHTML = xyz;
+            document.write(date +'<br>')
+            let dtString = xyz.toString();
+            let slicedPart = dtString.slice(3, 15); // Adjust indices as needed
+            
+            // This will write the sliced part of the date string to the document
+            document.write(slicedPart);
+        }
+
+      
+
+        //  setInterval(getdate,1000)
+        //  setTimeout(getdate,2000)
+        //  getDate()
+        //  getDate()
+        //  getDate()
+   
+         
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 onclick="test()">click</h1>
+    <b id="res"></b>
+    <h1 ondblclick="test()">dblClick</h1>
+    <h1 onmouseenter="test()">enter</h1>
+    <h1 onmouseover="test()">over</h1>
+    <h1 onmouseleave="test()">leave</h1>
+    <h1 onmouseout="test()">out</h1>
+   
+    <script>
+
+        function test()
+        {
+            // document.write("123123")
+            document.getElementById('res').innerHTML =123
+        }
+
+       
+
+    </script>
+    
+</body>
+</html>
