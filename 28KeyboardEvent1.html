@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <input type="text" onkeypress="getText()"> -->
+
+    <!-- <input type="text" onkeydown="getText()"> -->
+
+    <input type="text" onkeyup="getText()">
+
+    
+    <textarea name="" id=""></textarea>
+
+    <script>
+        inp = document.querySelector('input');
+
+        txt = document.querySelector('textarea')
+
+// console.log(inp,txt)
+
+
+
+function getText()
+{
+    txt.innerHTML = inp.value
+}
+getText()
+    </script>
+    
+</body>
+</html>

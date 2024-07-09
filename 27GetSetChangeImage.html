@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        position: relative;
+      }
+      #btn {
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        border: none;
+        background: transparent;
+        padding: 12px 14px;
+        box-shadow: 10px 10px 14px lightblue inset;
+        border-radius: 9px;
+        font-size: 40px;
+        color: #ffff;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="i1" src="" height="100px" width="100px" alt="" />
+
+    <img id="i2" src="img/pexel.jpg" height="100px" width="100px" alt="" />
+
+    <div>
+      <img id="i3" src="img/1.jpg" height="400px" width="100%" alt="" />
+      <button onclick="changeImages()" id="btn"> > </button>
+    </div>
+
+    <button onclick="getImage()">Get Image</button>
+    <button onclick="setImage()">Set Image</button>
+
+    <script>
+      img1 = document.getElementById("i1");
+
+      img2 = document.getElementById("i2");
+
+      img3 = document.getElementById("i3");
+
+      console.log(img3.src); //http://127.0.0.1:5500/i1.png
+
+      function test() {
+        document.write("hi<bR>");
+      }
+      test();
+
+      function changeImages() {
+        if (img3.src.match("img/pexel.jpg")) {
+          img3.src = "img/1.jpg";
+        } else if (img3.src.match("img/1.jpg")) {
+          img3.src = "img/wheeler.jpg";
+        } else {
+          img3.src = "img/pexel.jpg";
+        }
+      }
+
+        // setInterval('changeImages()',1000)
+
+      function getImage() {
+        img1.src = "img/pexel.jpg";
+      }
+
+      function setImage() {
+        img2.src = "img/1.jpg";
+      }
+    </script>
+  </body>
+</html>

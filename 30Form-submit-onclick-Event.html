@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Name : <input type="text" />
+    <b id="nmErr"></b>
+    
+    <br />
+    <button onclick="valiadte()">validate</button>
+
+    <script>
+      name1 = document.querySelector("input");
+      btn = document.querySelector("button");
+      console.log(name1.value, btn);
+
+     function valiadte()
+     {
+        if (name1.value == "") {
+        // alert("dslkfj");
+        document.getElementById('nmErr').innerHTML = " * Required"
+
+        document.getElementById('nmErr').style.color= "red"
+      }
+      else 
+      {
+        document.getElementById('nmErr').innerHTML = " "
+      }
+     }
+    </script>
+  </body>
+</html>

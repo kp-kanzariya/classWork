@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore minima,
+      magni blanditiis mollitia iusto harum iste omnis voluptate laudantium a
+      debitis minus sint tempora molestias nemo voluptatibus hic quas assumenda.
+    </p>
+
+    <button onclick="HidePara()">Hide</button>
+    <button onclick="ShowPara()">Show</button>
+    <button onclick="HideShow()">Hide-Show</button>
+    <script>
+      let p1 = document.querySelector("p");
+
+      function HidePara() {
+        p1.style.display = "none";
+      }
+      function ShowPara() {
+        p1.style.display = "block";
+      }
+
+      function HideShow() {
+        if (p1.style.display == "none") {
+          p1.style.display = "block";
+        //   console.log(p1.style.display)
+        }
+
+        else{
+            p1.style.display = "none";
+            // console.log(p1.style.display)
+        }
+      }
+    </script>
+  </body>
+</html>
