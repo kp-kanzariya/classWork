@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		.test {
+			height: 400px;
+			width: 250px;
+			background: black;
+			margin: 100px auto;
+			position: relative;
+			overflow: hidden;
+
+		}
+
+		.test::before {
+			content: "";
+			position: absolute;
+			height: 600px;
+			width: 600px;
+			background: conic-gradient(red 0deg, red 90deg, transparent 130deg, transparent 180deg, blue 90deg, blue 180deg, transparent 310deg, transparent 360deg);
+
+			/* background: linear-gradient(red,blue,green,white,yellow,purple,pink,magenta); */
+			top: 50%;
+			left: 50%;
+
+			transform: translate(-50%, -50%) rotate(-300deg);
+			transition: 2s;
+		}
+
+		.test:hover::before {
+
+			transform: translate(-50%, -50%) rotate(300deg);
+		}
+
+		.test::after {
+			content: "";
+			position: absolute;
+			height: 390px;
+			width: 240px;
+			background: black;
+			top: 50%;
+			left: 50%;
+
+			transform: translate(-50%, -50%);
+		}
+
+		h1 {
+
+
+			background: linear-gradient(red, blue);
+			/* background: url(https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg);*/
+			/* -o-background-clip: text;
+  -moz-background-clip: text;*/
+			-webkit-background-clip: text;
+
+			color: transparent;
+
+
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1>SOME TEXT</h1>
+
+	<div class="test">
+
+	</div>
+
+</body>
+
+</html>

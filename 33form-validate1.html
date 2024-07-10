@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+   
+   
+      <form>
+        Name: <input type="text" id="name" />
+        <b id="nmErr"></b>
+        <br /><br />
+
+        Mobile: <input type="text" id="mobile" />
+        <b id="mbErr"></b>
+        <br /><br />
+    
+        <input onclick="return val()" type="submit" value="Validate" />
+      </form>
+  
+
+    <script>
+      nm = document.getElementById("name");
+      nmErr = document.getElementById("nmErr");
+      mb = document.getElementById("mobile");
+      mbErr = document.getElementById("mbErr");
+
+      console.log(nm, mb);
+      function val() {
+        if (nm.value == "") {
+        //   alert("Name");
+        nmErr.innerHTML = " *Required..!"
+        nmErr.style.color= "red"
+          return  false;
+         
+        }
+
+        if (mb.value == "") {
+        //   alert("mobile");
+        mbErr.innerHTML = " *Required..!"
+        mbErr.style.color= "red"
+          return  false;
+        }
+      }
+    </script>
+  </body>
+</html>

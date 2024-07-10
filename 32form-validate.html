@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Name: <input type="text" id="name" /><br /><br />
+    <input type="button" value="Validate" id="btn" />
+<input type="text" pattern="[a-zA-Z]+">
+    <script>
+      name1 = document.getElementById("name");
+      btn = document.getElementById("btn");
+
+      let nm_exp = /^[a-zA-Z]+$/
+
+      function validate() {
+        if (name1.value == "") {
+          alert("Required...!");
+        }
+        else if(!(nm_exp.test(name1.value)))
+        {
+            alert("Letter only....!");
+        }
+        else 
+        {
+            alert("ok...!");
+        }
+
+       
+      }
+
+      btn.addEventListener("click",validate);
+    </script>
+  </body>
+</html>

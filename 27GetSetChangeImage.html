@@ -21,16 +21,30 @@
         color: #ffff;
         font-weight: bold;
       }
+      #btn1{
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        border: none;
+        background: transparent;
+        padding: 12px 14px;
+        box-shadow: 10px 10px 14px lightblue inset;
+        border-radius: 9px;
+        font-size: 40px;
+        color: #ffff;
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
     <img id="i1" src="" height="100px" width="100px" alt="" />
 
-    <img id="i2" src="img/pexel.jpg" height="100px" width="100px" alt="" />
+    <img id="i2" src="img/img1.jpg" height="100px" width="100px" alt="" />
 
     <div>
-      <img id="i3" src="img/1.jpg" height="400px" width="100%" alt="" />
+      <img id="i3" src="img/img2.jpg" height="400px" width="100%" alt="" />
       <button onclick="changeImages()" id="btn"> > </button>
+      <button onclick="changeImages()" id="btn1"> < </button>
     </div>
 
     <button onclick="getImage()">Get Image</button>
@@ -38,7 +52,7 @@
 
     <script>
       img1 = document.getElementById("i1");
-
+      
       img2 = document.getElementById("i2");
 
       img3 = document.getElementById("i3");
@@ -51,23 +65,23 @@
       test();
 
       function changeImages() {
-        if (img3.src.match("img/pexel.jpg")) {
-          img3.src = "img/1.jpg";
-        } else if (img3.src.match("img/1.jpg")) {
-          img3.src = "img/wheeler.jpg";
+        if (img3.src.match("img/img1.jpg")) {
+          img3.src = "img/img2.jpg";
+        } else if (img3.src.match("img/img2.jpg")) {
+          img3.src = "img/img3.jpg";
         } else {
-          img3.src = "img/pexel.jpg";
+          img3.src = "img/img1.jpg";
         }
       }
 
         // setInterval('changeImages()',1000)
 
       function getImage() {
-        img1.src = "img/pexel.jpg";
+        img1.src = "img/img1.jpg";
       }
 
       function setImage() {
-        img2.src = "img/1.jpg";
+        img2.src = "img/img2.jpg";
       }
     </script>
   </body>
