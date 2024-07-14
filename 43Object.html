@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/classWork/img/logo.svg">
     <title>Document</title>
 </head>
 <body>
@@ -15,20 +16,20 @@
         for(xyz in obj)
     {
         // document.write(xyz + "<br>")// 34 hi 
-        document.write(obj[xyz])
+        document.write(`${xyz} => ${obj[xyz]} <br />`)
     }
 
-    // for(x of obj)
+    // for(x of obj)  //object is not iterable
     // {
     //     document.write(x)
     // }
 
         
-        // document.write(obj.dbQuote)
-        // document.write(obj[34])
-        // document.write(obj['xyz'])
-        // document.write(obj["pataNahi"])
-        // document.write(obj['dbQuote'])
+        document.write(obj.dbQuote) 
+        document.write(obj[34])
+        document.write(obj['xyz1']) 
+        document.write(obj["pataNahi"])
+        document.write(obj['dbQuote'])
     </script>
     
 </body>

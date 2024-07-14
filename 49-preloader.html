@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{box-sizing: border-box;}
+
+        body 
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(45deg,lightblue 45%,lightcoral);
+        }
+        .x 
+        {
+            height: 150px;
+            width: 150px;
+            /* background: lightblue; */
+            border: 12px solid transparent;
+            border-top: 12px solid blue;
+            border-radius: 50%;
+            padding: 12px;
+            /* transform: translate(50%,50%); */
+            /* margin: 200px auto ; */
+            box-shadow: 0 0 20px #000 inset;
+            animation:  test 1s linear infinite;
+        }
+        .y 
+        {
+            height: 100px;
+            width: 100px;
+            /* background: red; */
+            border: 12px solid transparent;
+            border-top: 12px solid rgb(174, 214, 41);
+            border-radius: 50%;
+            box-shadow: 0 0 20px #000 inset;
+            padding: 12px;
+            animation:  test 1s linear infinite;
+        }
+
+        .z 
+        {
+            height: 50px;
+            width: 50px;
+            /* background: blue; */
+             border: 12px solid transparent;
+            border-top: 12px solid green;
+            border-radius: 50%;
+            box-shadow: 0 0 20px #000 inset;
+            animation:  test 1s linear infinite;
+            
+        }
+
+        @keyframes test
+        {
+            
+            to{transform: rotate(360deg);}
+        }
+    </style>
+</head>
+<body>
+
+   <div class="preloader">
+    <div class="x">
+
+        <div class="y">
+            <div class="z"></div>
+        </div>
+    </div>
+   </div>
+
+    <div id="index">
+        header
+        nav 
+        content 
+        footer
+    </div>
+
+    <script>
+
+        document.getElementById('index').style.display = "none"
+
+        document.querySelector('.preloader').style.display = "block"
+
+
+        function test()
+        {
+            document.getElementById('index').style.display = "block"
+            document.querySelector('.preloader').style.display = "none"
+        }
+
+        setTimeout(test,5000)
+    </script>
+    
+</body>
+</html>

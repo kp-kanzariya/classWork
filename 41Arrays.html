@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <!-- Array: collection of multiple values of any type
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- Array: collection of multiple values of any type
     array index/key/position always starts with 0
 
     var/let/const arr = [val1,"val2",true,[],{},fun(){}]
@@ -30,67 +32,59 @@
 
     arr = [name=>"kruparth",age=>22,course=>"React"]
 
-    arr = {'name':"kruparth","age":22,course:"React"}
+    arr = {'name':"kruparth","age":22,course:"React"} //object
 
     3. Multi-dimensional 
 
     arr = [[1,2]] -->
 
-    <h1 id="i1"></h1>
+  <h1 id="i1"></h1>
 
-    <script>
+  <script>
 
-          let arr = [12,"hi",123,45654];
+    let arr = [12, "hi", 123, 45654];
 
-        //   varname(arr).method(forEach(functionName))
+    //   varname(arr).method(forEach(functionName))
 
-        //  arr.forEach(xyz)
+    //  arr.forEach(xyz)
 
-        //  function xyz(v,k)
-        //  {
-        //     document.write(k+ "=>"+ v + "<br>")
-        //  }
+    //  function xyz(v,k)
+    //  {
+    //     document.write(k+ "=>"+ v + "<br>")
+    //  }
 
-        arr.forEach(function xyz(v,k)
-{
-   document.write(k+ "=>"+ v + "<br>")
-})
+    arr.forEach(function xyz(v, k) {
+      document.write(k + "=>" + v + "<br>")
+    })
 
-document.write("<br><br>")
+    document.write("<br><br>")
 
-arr.forEach(function (v,k)
-{
-   document.write(k+ "=>"+ v + "<br>")
-})
+    arr.forEach(function (v, k) {
+      document.write(k + "=>" + v + "<br>")
+    })
 
-document.write("<br><br>")
-arr.forEach( (v,k)=>
-{
-   document.write(k+ "=>"+ v + "<br>")
-})
+    document.write("<br><br>")
+    arr.forEach((v, k) => {
+      document.write(k + "=>" + v + "<br>")
+    })
 
 
 
+    //   for(xyz of var)
+    //   {
 
+    //   }
 
-         
+    // for(xyz of arr)
+    //   {
+    //     document.write(xyz + "<br>");//values
+    //   }
 
-
-        //   for(xyz of var)
-        //   {
-
-        //   }
-
-        // for(xyz of arr)
-        //   {
-        //     document.write(xyz + "<br>");//values
-        //   }
-
-        //   for(xyz1 in arr)
-        //   {
-        //     document.write(xyz1 + "<br>");//index
-        //     // document.write(arr[xyz1])
-        //   }
+    //   for(xyz1 in arr)
+    //   {
+    //     document.write(xyz1 + "<br>");//index
+    //     // document.write(arr[xyz1])
+    //   }
 
 
     //       for(ramilaben in varname)
@@ -104,32 +98,44 @@ arr.forEach( (v,k)=>
     //     document.write(arr[i] + "<br>")
     // }
 
-          // for(i=0;i<arr.length;i++)//i=3;3<3;3++
-          // {
-          //     // document.write(i);//0 1 2
-          //     document.write(arr[i] + "<br>")
-          // }
+    // for(i=0;i<arr.length;i++)//i=3;3<3;3++
+    // {
+    //     // document.write(i);//0 1 2
+    //     document.write(arr[i] + "<br>")
+    // }
 
-          // j=0
-          // while(j<arr.length)
-          // {
-          //     document.write(arr[j]+"<br>")
-          //     j++;
-          // }
+    // j=0
+    // while(j<arr.length)
+    // {
+    //     document.write(arr[j]+"<br>")
+    //     j++;
+    // }
 
-          // z=0;
+    // z=0;
 
-          // do{
-          //     document.write(arr[z]+"<br>");
-          //     z++;
-          // }while(z<arr.length)
-      // document.write(arr.length)
-          // document.write(arr[0])
-          // document.write(arr[1])
-          // document.write(arr[2])
-          // console.log(arr)
-          // document.write(arr)
-          // document.getElementById('i1').innerHTML = arr
-    </script>
-  </body>
+    // do{
+    //     document.write(arr[z]+"<br>");
+    //     z++;
+    // }while(z<arr.length)
+    // document.write(arr.length)
+    // document.write(arr[0])
+    // document.write(arr[1])
+    // document.write(arr[2])
+    // console.log(arr)
+    // document.write(arr)
+    // document.getElementById('i1').innerHTML = arr
+
+
+    const person = {
+      firstName: 'John',
+      lastName: 'Doe',
+      age: 30
+    };
+
+    for (const key in person) {
+      document.write(`${key}:=> ${person[key]} <br /> `);
+    }
+  </script>
+</body>
+
 </html>
