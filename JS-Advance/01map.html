@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        const radius =[1,2,3,4,5];
+
+        // console.log(Math.PI*r[0]*r[0]);
+        // console.log(Math.PI*r[1]*r[1]);
+        // console.log(Math.PI*r[2]*r[2]);
+        // console.log(Math.PI*r[3]*r[3]);
+
+        const op = [];
+// op.push(12,"hio")
+            
+
+
+        for(i=0;i<radius.length;i++)
+    {
+       op.push(Math.PI*radius[i]*radius[i]);
+    }
+
+    console.log(op)
+
+    const r = radius.map((v)=>{
+        return v*v*Math.PI;
+    })
+
+    console.log(r)
+
+
+
+
+
+            const arr = [1,2,3,4]
+
+            const x = arr.map((v)=>{
+                return v;
+            })
+
+            console.log(x);
+
+
+
+    </script>
+    
+</body>
+</html>
