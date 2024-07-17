@@ -17,8 +17,10 @@
     mouseenter: Fired when a pointing device is moved onto the element that has the listener attached.
     mouseleave: Fired when a pointing device is moved off the element that has the listener attached.
     mousemove: Fired when a pointing device is moved while over an element.
-    mouseover: Fired when a pointing device is moved onto the element that has the listener attached or onto one of its children.
-    mouseout: Fired when a pointing device is moved off the element that has the listener attached or off one of its children.
+    mouseover: Fired when a pointing device is moved onto the element that has the listener attached or onto one of its
+    children.
+    mouseout: Fired when a pointing device is moved off the element that has the listener attached or off one of its
+    children.
     contextmenu: Fired when the right button of the mouse is clicked (before the context menu is displayed).
 
     Keyboard Events
@@ -94,12 +96,142 @@ Miscellaneous Events
     transitionstart: Fired when a CSS transition starts.
     transitionend: Fired when a CSS transition completes.
 
-Example of Using addEventListener
+    The Browser Object Model (BOM) in JavaScript refers to the interactions with the browser window and its components, such as the document, history, location, and navigator objects. BOM events are events triggered by actions related to these components. Here's a list of common BOM events:
+    Window Events
+    
+    load: Fired when the whole page has loaded, including all dependent resources such as stylesheets and images.
+    window.addEventListener('load', () => {
+        console.log('Page fully loaded');
+    });
 
-javascript
-
-
-This is a broad list of events that can be listened for using addEventListener, and it covers many of the typical interactions and actions that might occur in a web application.
+    unload: Fired when the document or a child resource is being unloaded.
+    window.addEventListener('unload', () => {
+        console.log('Page is unloading');
+    });
+    
+    beforeunload: Fired when the window, document, and its resources are about to be unloaded.
+    window.addEventListener('beforeunload', (event) => {
+        event.returnValue = 'Are you sure you want to leave?';
+    });
+    
+    resize: Fired when the window is resized.
+    window.addEventListener('resize', () => {
+        console.log('Window resized');
+    });
+    
+    scroll: Fired when the document view is scrolled.
+    window.addEventListener('scroll', () => {
+        console.log('Window scrolled');
+    });
+    
+    error: Fired when a runtime script error occurs.
+    window.addEventListener('error', (event) => {
+        console.log('Error occurred: ', event.message);
+    });
+    
+    focus: Fired when the window gains focus.
+    window.addEventListener('focus', () => {
+        console.log('Window focused');
+    });
+    
+    blur: Fired when the window loses focus.
+    window.addEventListener('blur', () => {
+            console.log('Window lost focus');
+        });
+    
+    *** Network Events ***
+    
+    online: Fired when the browser has gained network connectivity.
+    window.addEventListener('online', () => {
+        console.log('Network connection restored');
+    });
+    
+    offline: Fired when the browser has lost network connectivity.
+    window.addEventListener('offline', () => {
+            console.log('Network connection lost');
+        });
+    
+    *** History Events ***
+    
+    popstate: Fired when the active history entry changes while navigating the session history.
+    window.addEventListener('popstate', (event) => {
+            console.log('History changed: ', event.state);
+        });
+    
+    *** Storage Events ***
+    
+    storage: Fired when a storage area (localStorage or sessionStorage) has been changed in the context of another document.
+    window.addEventListener('storage', (event) => {
+            console.log('Storage changed: ', event.key);
+        });
+    
+    *** Fullscreen Events ***
+    
+    fullscreenchange: Fired when the document switches into or out of fullscreen mode.
+    document.addEventListener('fullscreenchange', () => {
+        console.log('Fullscreen mode changed');
+    });
+    
+    fullscreenerror: Fired when there is an error in changing the document's fullscreen mode.
+    document.addEventListener('fullscreenerror', () => {
+            console.log('Fullscreen error occurred');
+        });
+    
+    *** Clipboard Events ***
+    
+    copy: Fired when the copy operation is initiated.
+    document.addEventListener('copy', () => {
+        console.log('Copy operation initiated');
+    });
+    
+    cut: Fired when the cut operation is initiated.
+    document.addEventListener('cut', () => {
+        console.log('Cut operation initiated');
+    });
+    
+    paste: Fired when the paste operation is initiated.
+    document.addEventListener('paste', () => {
+            console.log('Paste operation initiated');
+        });
+    
+    *** Orientation Events ***
+    
+    orientationchange: Fired when the orientation of the device changes.
+    window.addEventListener('orientationchange', () => {
+            console.log('Device orientation changed');
+        });
+    
+    *** Battery Events ***
+    
+    levelchange: Fired when the battery level changes (part of the Battery Status API).
+    navigator.getBattery().then(battery => {
+        battery.addEventListener('levelchange', () => {
+            console.log('Battery level changed');
+        });
+    });
+    
+    chargingchange: Fired when the charging state of the battery changes.
+    navigator.getBattery().then(battery => {
+        battery.addEventListener('chargingchange', () => {
+            console.log('Battery charging state changed');
+        });
+    });
+    
+    chargingtimechange: Fired when the battery charging time changes.
+    navigator.getBattery().then(battery => {
+        battery.addEventListener('chargingtimechange', () => {
+            console.log('Battery charging time changed');
+        });
+    });
+    
+    dischargingtimechange: Fired when the battery discharging time changes.
+    navigator.getBattery().then(battery => {
+            battery.addEventListener('dischargingtimechange', () => {
+                console.log('Battery discharging time changed');
+            });
+        });
+    
+    These BOM events help manage and respond to changes in the browser environment, allowing developers to create more interactive and responsive web applications.
 
     Mouse : 
     1. click 
@@ -126,16 +258,16 @@ This is a broad list of events that can be listened for using addEventListener, 
     4.scroll
 
 <script>
-    
-// Adding an event listener for the click event
-document.querySelector('button').addEventListener('click', function() {
-  alert('Button was clicked!');
-});
 
-// Adding an event listener for the input event
-document.querySelector('input').addEventListener('input', function() {
-  console.log('Input value changed:', this.value);
-});
+    // Adding an event listener for the click event
+    document.querySelector('button').addEventListener('click', function () {
+        alert('Button was clicked!');
+    });
+
+    // Adding an event listener for the input event
+    document.querySelector('input').addEventListener('input', function () {
+        console.log('Input value changed:', this.value);
+    });
 </script>
     
 </body>
