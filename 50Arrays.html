@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+"use strict";
+       const arr = ["apple","orange","kiwi"];
+    //    arr.reverse();
+    //     document.write(arr)
+
+   const x =  arr.forEach((v,i)=>{
+       return (i + " => " + v + "<br>")
+    })
+
+   const y =  arr.map((v,i)=>{
+        return (i + " => " + v + "<br>")
+    })
+
+    console.log(y)
+
+    const arrData = arr.map(
+        (v)=>{
+        // console.log(v)
+        return v;
+    }
+)
+
+console.log(arrData)
+
+
+    </script>
+    
+</body>
+</html>
