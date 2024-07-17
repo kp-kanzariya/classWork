@@ -30,6 +30,16 @@
             box-shadow: 0 0 20px #000 inset;
             animation:  test 1s linear infinite;
         }
+        /* }.x:hover{
+            transition: 1s;
+            transform:rotate(360deg) ;
+            transform-origin: 50% 50%;
+        }
+        .y:hover{
+            transition: 2s;
+            transform:rotate(-360deg) ;
+            /* transform-origin: 50% 50%; 
+        } */
         .y 
         {
             height: 100px;
@@ -40,27 +50,36 @@
             border-radius: 50%;
             box-shadow: 0 0 20px #000 inset;
             padding: 12px;
-            animation:  test 1s linear infinite;
+            /* animation: none; */
+            animation:test1 1s linear infinite;
+            /* transform-origin: 50% 50%; */
         }
 
-        .z 
+        /* .z 
         {
             height: 50px;
             width: 50px;
-            /* background: blue; */
+            background: blue;
              border: 12px solid transparent;
             border-top: 12px solid green;
             border-radius: 50%;
             box-shadow: 0 0 20px #000 inset;
             animation:  test 1s linear infinite;
             
-        }
+        } */
 
         @keyframes test
         {
-            
-            to{transform: rotate(360deg);}
+            0% { transform: rotate(0deg); }
+            100%{transform: rotate(360deg);}
         }
+        @keyframes test1
+        {
+            0% { transform: rotate(0deg); }
+            1%{transform: rotate(360deg);}
+            100%{transform: rotate(-360deg);}
+        }
+
     </style>
 </head>
 <body>
@@ -69,16 +88,13 @@
     <div class="x">
 
         <div class="y">
-            <div class="z"></div>
+            <!-- <div class="z"></div> -->
         </div>
     </div>
    </div>
 
     <div id="index">
-        header
-        nav 
-        content 
-        footer
+        <a href="/practice/toDoList.html">New Page</a>
     </div>
 
     <script>
