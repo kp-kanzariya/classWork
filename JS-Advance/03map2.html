@@ -8,28 +8,28 @@
 <body>
 
     <script>
-    //    const arr = [1,2,3];
+       const arr = [1,2,3,4,5];
 
     //    m1 = arr.map((v,i,a)=>{
-    //     return a;
+    //     return a; //calulation
     //    })
 
-    // m1 = arr.filter((v,i)=>{
-    //     return v;
+    // m1 = arr.filter((v,i,a)=>{
+    //     return v;  //index - value give 2...//condition
     //    })
 
-    // m1 = arr.reduce((v,i)=>{
-    //     return i;
-    //    })
+    m1 = arr.reduce((v,i)=>{
+        return v; //one value //currrent ,next
+       })
 
-    //    console.log(m1)
+       console.log(m1)
 
 
     str = "Hello Nehal How Are You?";
     // console.log(str[0])
     // console.log(str.split(" "))
 
-    const val = str.split(" ").map((v)=>{
+    const val = str.split(" ").map((v)=>{ //methos joinig == more than one methods
         return v[0];
     }).join("*")
     console.log(val)

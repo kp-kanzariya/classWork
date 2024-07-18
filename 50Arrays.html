@@ -13,12 +13,13 @@
     //    arr.reverse();
     //     document.write(arr)
 
-   const x =  arr.forEach((v,i)=>{
-       return (i + " => " + v + "<br>")
+   const x =  arr.forEach((v,i, ar)=>{
+        console.log(v) //use to print value index  and array
+    //    return (i + " => " + v + "<br>") //forEach cant return a value //it gives undefined
     })
 
-   const y =  arr.map((v,i)=>{
-        return (i + " => " + v + "<br>")
+   const y =  arr.map((v,i ,ar)=>{
+        return (i + " => " + v + "<br>" +ar) //map can print and return array
     })
 
     console.log(y)
