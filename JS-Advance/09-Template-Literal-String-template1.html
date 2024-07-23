@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2 id="d1"></h2>
+    <script>
+        const students = [
+            {id:1,name:"manoj",course:"react"},
+            {id:2,name:"manoj1",course:"wd"},
+            {id:3,name:"manoj2",course:"AI"},
+            {id:4,name:"manoj3",course:"php"},
+        ]
+
+        let x=""
+        students.map((v)=>{
+
+           x = x + `<li>${v.id}</li>`
+
+        })
+
+        document.getElementById('d1').innerHTML = x
+
+     
+    </script>
+    
+</body>
+</html>
