@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        class Bank 
+        {
+           
+           x =  (pin,bal,acc)=>
+            {
+                let atmPin =pin;
+                let balance =bal;
+                let accNum = acc;
+                let IFSC = "HDFC000N"
+
+                console.log(atmPin,balance,accNum,IFSC)
+            }
+
+            static DBMS()
+            {
+                console.log("THIS BANK DB")
+            }
+        }
+
+        const Kruparth = new Bank;
+        const Manoj = new Bank;
+        const Ashwin = new Bank;
+
+        Kruparth.x(1234,123445,7890)
+        Manoj.x(456,98879,6785)
+        Ashwin.x(123456789,654,98)
+
+        Bank.DBMS();
+
+    </script>
+</body>
+</html>

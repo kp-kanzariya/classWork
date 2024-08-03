@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+
+        const students = {
+            fullName: function () {
+                return this.fname + " " + this.lname
+            }
+        }
+
+        const stu1 = {
+            fname: "Manoj",
+            lname: "XYZ"
+
+        }
+
+        const stu2 = {
+            fname: "Ashwin",
+            lname: "ABC"
+        }
+
+        // console.log(students.fullName())
+
+
+        console.log(students.fullName.apply(stu1))
+        console.log(students.fullName.call(stu2))
+
+        function greet(greeting, punctuation) {
+            console.log(`${greeting}, ${this.name}${punctuation}`);
+        }
+
+        const person = { name: 'Alice' };
+
+        greet.apply(person, ['Hello', '!']); // "Hello, Alice!"
+
+
+
+    </script>
+
+</body>
+
+</html>

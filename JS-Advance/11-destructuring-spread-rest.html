@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- Destructuring : it is an assignment to abstract values from an array or obj -->
+
+    <!-- x = 1;
+    {} = 1; -->
+     <!-- x=[1,2,34,4];
+      let a,s,d,f=[1,2,34,4];
+     let a,...d=...x -->
+
+
+    <script>
+        function processData({ name, age, ...rest }, ...additionalInfo) {
+            console.log(`Name: ${name}, Age: ${age}`);
+            console.log(`Rest:`, rest);
+            console.log(`Additional Info:`, additionalInfo);
+        }
+
+        const person = { name: 'Alice', age: 25, city: 'Wonderland', profession: 'Developer' };
+        processData(person, 'Loves JavaScript', 'Enjoys hiking');
+
+
+
+        const arr = [12, [1, 2, 3, 4], 56, "hi"];
+
+        //  const x = 1;
+        //  const [c,b,...a] = arr; //rest
+        //  console.log(b)
+
+        const arr1 = ["x", "y", "z"];
+
+        const arr3 = [...arr, ...arr1];//spread
+
+        console.log(arr3)
+
+        const arr4 = arr.concat(arr1)
+        console.log(arr4)
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

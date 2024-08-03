@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+    Execution:
+
+    call and apply execute the function immediately.
+    bind returns a new function that can be invoked later.
+    Arguments Handling:
+
+    call takes arguments as a list.
+    apply takes arguments as an array.
+    bind takes initial arguments that are prepended to the arguments provided when the new function is called.
+
+    call: Calls a function with a specified this context and individual arguments.
+    bind: Returns a new function with a specified this context and initial arguments.
+    apply: Calls a function with a specified this context and arguments provided as an array.
+</pre>
+    <script>
+
+
+        const students = {
+            fullName: function () {
+                return this.fname + " " + this.lname
+            }
+        }
+
+        const stu1 = {
+            fname: "Manoj",
+            lname: "XYZ"
+
+        }
+
+        const stu2 = {
+            fname: "Ashwin",
+            lname: "ABC"
+        }
+
+
+        //   function getname(m1,m2) {
+
+        //     return this.st=[m1,m2]
+        //   }
+
+
+
+        // console.log(students.fullName())
+
+        console.log(students.fullName.call(stu1))
+        //    console.log( students.fullName.apply(["stu1","stu2"]))
+        //    console.log(  students.apply["stu1","stu2"])
+        // console.log(getname.apply(stu1,["manoj","kumar"]));
+        //   console.log(getname.call(stu2.fname,stu2.lname));
+        // console.log();
+
+
+
+        // function greet(greeting, punctuation) {
+        //     console.log(`${greeting}, ${this.name}${punctuation}`);
+        // }
+
+        // const person = { name: 'Alice' };
+
+        // greet.call(person, 'Hello', '!'); // "Hello, Alice!"
+
+    </script>
+
+</body>
+
+</html>

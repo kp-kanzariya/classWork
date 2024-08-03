@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+
+    function Emotions(emotion) {
+      console.log(emotion)
+    }
+    const vadaRaha = new Promise((call, CallNahiKarega) => {
+      if (call) {
+        return call("Hello Janu...!");
+      } else {
+        return CallNahiKarega('Tu nahi to koi aur sahi...!bhad me jaa.!')
+      }
+    });
+
+    //   console.log(vadaRaha)
+
+    vadaRaha.then(
+      (khushi) => {
+        // console.log(khushi)
+        Emotions(khushi)
+      },
+      (whoCares) => {
+        // console.log(whoCares)
+        Emotions(whoCares)
+      }
+    )
+  </script>
+</body>
+
+</html>
