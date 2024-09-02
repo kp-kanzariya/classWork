@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>car mode</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            background: linear-gradient(to left, pink, blue)
+
+        }
+
+        .card {
+            width: 300px;
+            background-color: rgb(14, 10, 10);
+            color: aliceblue;
+            border-radius: 30px;
+            padding: 20px;
+        }
+
+        .head {
+            border-radius:  20px;
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 10px;
+            /* background-color: #06291e; */
+            align-items: center;
+            box-shadow: 2px 1px 3px rgb(52, 52, 52);
+
+
+        }
+
+        .hir span,
+        .hil span {
+            background-color: #151515;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 2px 2px 2px rgb(49, 49, 49);
+        }
+
+        .htext p,
+        h5 {
+            text-align: center;
+        }
+
+
+        .png img {
+            height: 160px;
+
+
+        }
+
+        .png {
+            text-align: center;
+            border-radius: 10px;
+            margin: 5px;
+            box-shadow: 0 0 3px rgb(52, 52, 52) inset;
+
+
+        }
+
+        .text {
+            display: flex;
+            justify-content: space-around;
+            margin: 5px;
+            padding: 3px;
+            border-radius: 3px;
+            box-shadow: 0 0 1px rgb(52, 52, 52) inset;
+
+        }
+
+        .text p span {
+            color: gray;
+            font-size: small;
+        }
+        .boxs{
+            display: flex;
+            overflow:auto;
+            margin: 5px;
+            margin-left: 80px;
+           
+        }
+        .box1{
+            flex-shrink: 0;
+            
+            height: 80px;
+            width: 80px;
+            background-color: #131313;
+            margin: 7px;
+        }
+        .box1 p{
+            font-size: small;
+            color: #757575;
+            margin-top: 30px;
+            margin-left: 10px;
+            border-radius: 5px;
+        }
+        .onoff{
+            box-shadow: 2px 1px 3px rgb(52, 52, 52);
+
+            background-color: #171717;
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-between;
+            padding: 25px;
+            margin-top: 10px;
+            align-items: center;
+        }
+        .onoff i{
+            background-color: #202699;
+            padding: 14px;
+            border-radius: 50%;
+            box-shadow: 0 0 3px rgb(122, 122, 246) inset;
+        }
+        .onoff p{
+            font-size: 14px;
+            color: #7a7a7a;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="head">
+            <div class="hil">
+                <span> <i class="fa-solid fa-car" style="color: #ededed;"></i> </span>
+
+            </div>
+            <div class="htext">
+                <p>Tesla</p>
+                <h5>Cybertruck</h5>
+
+            </div>
+            <div class="hir">
+                <span> <i class="fa-regular fa-user" style="color: #e8e8e8;"></i> </span>
+
+            </div>
+        </div>
+        <div class="png">
+            <img src="/classWork/img/cybertruck.png" alt="">
+        </div>
+        <div class="status">
+            <p>Status</p>
+            <div class="text">
+
+                <p><span><i class="fa-solid fa-battery-three-quarters" style="color: #636363;"></i> Battery </span><br>
+                    54%</p>
+                <p><span><i class="fa-solid fa-gauge-simple" style="color: #636363;"></i> Range </span><br> 227km</p>
+                <p><span><i class="fa-solid fa-temperature-quarter" style="color: #636363;"></i> Temprature </span><br>
+                    27c</p>
+
+            </div>
+
+        </div>
+        <div class="info">
+            <p>Information</p>
+            <div class="boxs">
+                <div class="box1">
+                    <p>Engine <br>Sleeping Mode</p>
+                </div>
+                <div class="box1">
+                    <p>Climate <br>AC On/Off</p>
+                </div>
+                <div class="box1">
+                    <p>Tires <br>New Add</p>
+                </div>
+                <div class="box1">
+                    <p>Climate <br>AC On/Off</p>
+                </div>
+                <div class="box1">
+                    <p>Climate <br>AC On/Off</p>
+                </div>
+                <div class="box1">
+                    <p>Climate <br>AC On/Off</p>
+                </div>
+            </div>
+
+        </div>
+        Navigation
+        <div class="onoff">
+            <p>AC is On <br> <span>Tap To Turn Off or Swip for fast setup</span></p>
+            <i class="fa-solid fa-car" style="color: #ffffff;"></i>
+
+        </div>
+    </div>
+</body>
+
+</html>

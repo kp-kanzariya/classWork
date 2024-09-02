@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav Bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        body {
+
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .cont {
+            position: relative;
+            background-color: rgb(0, 8, 101);
+        }
+
+        .ndiv {
+            display: flex;
+            justify-content: center;
+        }
+
+        .ndiv h4 {
+            color: red;
+        }
+
+        /* .ndiv h4::before{
+            content: '';
+            position: absolute;
+            height: 4px;
+            width: 0%;
+            transform: translate(0%);
+            background-color: rgb(37, 195, 55);
+            transition:  2s ;
+
+        }.ndiv h4:hover::before{
+            width: 100%;
+            transform: translate(10%) scale(5) rotate(360deg) ;
+            
+
+
+        } */
+        .navbar {
+            height: 33px;
+            /* or you can use height:50px or 3.125em; */
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 80vw;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 25%;
+            /* Equal width for each link */
+            text-align: center;
+        }
+
+        .nav-link img {
+            height: 20px;
+            width: 20px;
+        }
+
+        .navbar1 {
+            height: 80px;
+            /* or you can use height: 5em; */
+            background-color: rgb(126, 117, 255);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 85vw;
+            margin: auto;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 33.33%;
+            /* Each section gets 1/3rd of the width */
+        }
+
+        .search-section input[type="text"] {
+            height: 30px;
+            width: 200px;
+            margin-right: 10px;
+        }
+
+        .search-section img,
+        .social-media-section img {
+            height: 40px;
+            width: 40px;
+        }
+
+        .logo-section img {
+
+            width: 200px;
+
+        }
+
+
+        .social-media-section img {
+            margin-left: 10px;
+        }
+
+        .slider-container {
+            position: relative;
+            height: 84vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide h1 {
+            background-color: rgba(255, 255, 255, 0.184);
+            padding: 60px 100px;
+            border-radius: 3px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        .slide span {
+            font-size: 42px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: 900;
+            color: coral;
+        }
+
+        .slide .sp {
+            font-size: 20px;
+            color: rgb(177, 0, 0);
+            letter-spacing: 5px;
+        }
+
+        .slide .btn1 {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: inline-block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            font-size: 17px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in;
+        }
+
+        .slide .btn1:hover {
+
+            /* border-radius: 15px; */
+            background-color: rgb(117, 177, 255);
+        }
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            font-size: 2em;
+            cursor: pointer;
+        }
+
+        .nav-btn.left {
+            left: 10px;
+        }
+
+        .nav-btn.right {
+            right: 10px;
+        }
+
+        .dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: white;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: gray;
+        }
+
+        .container {
+            width: 90vw;
+            margin: 20px auto;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .filter {
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: #ddd;
+        }
+
+        .filter:hover {
+            background-color: #8f8f8f;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+        }
+
+        .card,
+        .description {
+            width: 290px;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .description {
+            border: 1px solid gray;
+            padding: 5px;
+        }
+
+        .card {
+            text-align: center;
+        }
+
+        .fullcard {
+            background-color: #ffffff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .description>p,
+        span {
+            margin: 0 0 5px 0;
+            color: #2a2a2a;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .star i {
+            margin: 5px;
+
+        }
+
+        .card-details {
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+        }
+
+        .card img:hover {
+            transform: scale(1.15);
+            transition: 0.6s;
+        }
+
+        .new-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            font-size: 12px;
+            border-radius: 5px;
+        }
+
+        .card-details {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-details h3 {
+            margin: -10px 0;
+        }
+
+        .card-details p {
+            color: #555;
+        }
+
+        .price {
+            color: green;
+            font-weight: bold;
+        }
+
+        .discount {
+            color: red;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cont">
+
+        <div class="ndiv">
+            <h4>name</h4>
+            <nav class="navbar">
+                <a href="#" class="nav-link">
+                    <img src="/classWork/img/bx-headphone.svg" alt="Icon 1">
+                    Sign-In
+                </a>
+                <a href="#" class="nav-link">
+                    <img src="/classWork/img/bx-heart.svg" alt="Icon 2">
+                    Sing-Up
+                </a>
+                <a href="#" class="nav-link">
+                    <img src="/classWork/img/bx-history.svg" alt="Icon 3">
+                    Call-0789456321
+                </a>
+                <a href="#" class="nav-link">
+                    <img src="/classWork/img/bx-car.svg" alt="Icon 4">
+                    Call-0789456321
+                </a>
+            </nav>
+        </div>
+        <div class="navbar1">
+            <div class="section search-section">
+                <input type="text" placeholder="Search...">
+                <img src="/classWork/img/bx-history.svg" alt="Search Icon">
+            </div>
+            <div class="section logo-section">
+                <img src="/classWork/img/logo.svg" alt="Logo">
+            </div>
+            <div class="section social-media-section">
+                <img src="/classWork/img/img5.jpg" alt="Facebook">
+                <img src="/classWork/img/img2.jpg" alt="Twitter">
+                <img src="/classWork/img/img3.jpg" alt="Instagram">
+                <img src="/classWork/img/img4.jpg" alt="LinkedIn">
+            </div>
+        </div>
+        <div class="slider-container">
+            <div class="slider" id="slider">
+                <div class="slide">
+                    <img src="/classWork/img/img2.jpg" alt="Image 1">
+                    <h1>The Biggest <span class="sale"> Sale </span>
+                        <p class="sp"> Special for today</p>
+                    </h1>
+
+
+                    <button class="btn1">Learn More</button>
+                </div>
+                <div class="slide">
+                    <img src="/classWork/img/img1.jpg" alt="Image 2">
+                    <h1>The Biggest <span class="sale"> Sale </span>
+                        <p class="sp"> Special for today</p>
+                    </h1>
+                    <button class="btn1">Learn More</button>
+                </div>
+                <div class="slide">
+                    <img src="/classWork/img/img3.jpg" alt="Image 3">
+                    <h1>The Biggest <span class="sale"> Sale </span>
+                        <p class="sp"> Special for today</p>
+                    </h1>
+                    <button class="btn1">Learn More</button>
+                </div>
+                <div class="slide">
+                    <img src="/classWork/img/img4.jpg" alt="Image 4">
+                    <h1>The Biggest <span class="sale"> Sale </span>
+                        <p class="sp"> Special for today</p>
+                    </h1>
+                    <button class="btn1">Learn More</button>
+                </div>
+                <div class="slide">
+                    <img src="/classWork/img/img5.jpg" alt="Image 5">
+                    <h1>The Biggest <span class="sale"> Sale </span>
+                        <p class="sp"> Special for today</p>
+                    </h1>
+                    <button class="btn1">Learn More</button>
+                </div>
+            </div>
+            <button class="nav-btn left" onclick="prevSlide()">&#10094;</button>
+            <button class="nav-btn right" onclick="nextSlide()">&#10095;</button>
+            <div class="dots" id="dots">
+                <span class="dot" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="filters">
+                <div class="filter" onclick="filterCards('all')">All</div>
+                <div class="filter" onclick="filterCards('category1')">Category 1</div>
+                <div class="filter" onclick="filterCards('category2')">Category 2</div>
+                <div class="filter" onclick="filterCards('category3')">Category 3</div>
+                <div class="filter" onclick="filterCards('category4')">Category 4</div>
+            </div>
+            <div class="cards">
+
+                <div class="fullcard">
+                    <div class="card category1">
+                        <img src="/classWork/img/img5.jpg" alt="Image 1">
+                        <div class="new-tag">New</div>
+                        <div class="card-text">
+                            <h3>Garnier</h3>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <p>Garnier Pure Active Cleaning Vavier Face Changing</p>
+                        <span>16$</span>
+                        <div class="stars">
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+
+                      </div>
+                    </div>
+                </div>
+                <div class="fullcard">
+                    <div class="card category1">
+                        <img src="/classWork/img/img5.jpg" alt="Image 1">
+                        <div class="new-tag">New</div>
+                        <div class="card-text">
+                            <h3>Garnier</h3>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <p>Garnier Pure Active Cleaning Vavier Face Changing</p>
+                        <span>16$</span>
+                        <div class="stars">
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+
+                        </div>
+                    </div>
+                </div><div class="fullcard">
+                    <div class="card category1">
+                        <img src="/classWork/img/img5.jpg" alt="Image 1">
+                        <div class="new-tag">New</div>
+                        <div class="card-text">
+                            <h3>Garnier</h3>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <p>Garnier Pure Active Cleaning Vavier Face Changing</p>
+                        <span>16$</span>
+                        <div class="stars">
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+
+                        </div>
+                    </div>
+                </div><div class="fullcard">
+                    <div class="card category1">
+                        <img src="/classWork/img/img5.jpg" alt="Image 1">
+                        <div class="new-tag">New</div>
+                        <div class="card-text">
+                            <h3>Garnier</h3>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <p>Garnier Pure Active Cleaning Vavier Face Changing</p>
+                        <span>16$</span>
+                        <div class="stars">
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+
+                        </div>
+                    </div>
+                </div><div class="fullcard">
+                    <div class="card category1">
+                        <img src="/classWork/img/img5.jpg" alt="Image 1">
+                        <div class="new-tag">New</div>
+                        <div class="card-text">
+                            <h3>Garnier</h3>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <p>Garnier Pure Active Cleaning Vavier Face Changing</p>
+                        <span>16$</span>
+                        <div class="stars">
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+
+                        </div>
+                    </div>
+                </div><div class="fullcard">
+                    <div class="card category1">
+                        <img src="/classWork/img/img5.jpg" alt="Image 1">
+                        <div class="new-tag">New</div>
+                        <div class="card-text">
+                            <h3>Garnier</h3>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <p>Garnier Pure Active Cleaning Vavier Face Changing</p>
+                        <span>16$</span>
+                        <div class="stars">
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+
+                        </div>
+                    </div>
+                </div><div class="fullcard">
+                    <div class="card category1">
+                        <img src="/classWork/img/img5.jpg" alt="Image 1">
+                        <div class="new-tag">New</div>
+                        <div class="card-text">
+                            <h3>Garnier</h3>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <p>Garnier Pure Active Cleaning Vavier Face Changing</p>
+                        <span>16$</span>
+                        <div class="stars">
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+
+                        </div>
+                    </div>
+                </div><div class="fullcard">
+                    <div class="card category1">
+                        <img src="/classWork/img/img5.jpg" alt="Image 1">
+                        <div class="new-tag">New</div>
+                        <div class="card-text">
+                            <h3>Garnier</h3>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <p>Garnier Pure Active Cleaning Vavier Face Changing</p>
+                        <span>16$</span>
+                        <div class="stars">
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        function filterCards(category) {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.style.display = category === 'all' || card.classList.contains(category) ? 'block' : 'none';
+            });
+        }
+
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function updateSlide() {
+            const slider = document.getElementById('slider');
+            slider.style.transform = `translateX(${-currentIndex * 100}%)`;
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlide();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateSlide();
+        }
+
+        function currentSlide(index) {
+            currentIndex = index;
+            updateSlide();
+        }
+
+        updateSlide();
+    </script>
+</body>
+
+</html>

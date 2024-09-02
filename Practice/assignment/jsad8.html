@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Editor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        .editor {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 400px;
+        }
+        .editor img {
+            max-width: 100%;
+            transition: all 0.3s ease;
+        }
+        .controls {
+            margin-top: 20px;
+        }
+        .controls label {
+            display: block;
+            margin: 10px 0;
+        }
+        .controls input[type="range"] {
+            width: 100%;
+        }
+        .controls button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+        .controls button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="editor">
+        <img id="image" src="/classWork/img/img2.jpg" alt="Editable Image">
+        <div class="controls">
+            <label for="brightness">Brightness: <span id="brightnessValue">100</span>%</label>
+            <input type="range" id="brightness" min="0" max="200" value="100">
+
+            <button id="rotate">Rotate</button>
+            <button id="flipX">Flip Horizontal</button>
+            <button id="flipY">Flip Vertical</button>
+        </div>
+    </div>
+
+    <script>
+        const image = document.getElementById('image');
+        const brightnessSlider = document.getElementById('brightness');
+        const brightnessValue = document.getElementById('brightnessValue');
+        const rotateButton = document.getElementById('rotate');
+        const flipXButton = document.getElementById('flipX');
+        const flipYButton = document.getElementById('flipY');
+
+        let rotation = 0;
+        let flipX = 1;
+        let flipY = 1;
+
+        brightnessSlider.addEventListener('input', (e) => {
+            const brightness = e.target.value;
+            brightnessValue.textContent = brightness;
+            applyTransformations();
+        });
+
+        rotateButton.addEventListener('click', () => {
+            rotation += 90;
+            applyTransformations();
+        });
+
+        flipXButton.addEventListener('click', () => {
+            flipX *= -1;
+            applyTransformations();
+        });
+
+        flipYButton.addEventListener('click', () => {
+            flipY *= -1;
+            applyTransformations();
+        });
+
+        function applyTransformations() {
+            const brightness = brightnessSlider.value;
+            image.style.filter = `brightness(${brightness}%)`;
+            image.style.transform = `rotate(${rotation}deg) scaleX(${flipX}) scaleY(${flipY})`;
+        }
+    </script>
+</body>
+</html>

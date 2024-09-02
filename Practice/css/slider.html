@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+</head>
+<style>
+   * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.slider {
+    width: 80%;
+    max-width: 800px;
+    overflow: auto;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slides {
+    display: flex;
+    width: 400%;
+    /* animation: slideAnimation 6s infinite; */
+}
+
+.slide {
+    width: 100%;
+    transition: transform 1s ease;
+}
+
+.slide img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Keyframe Animation */
+/* @keyframes slideAnimation {
+    0% { transform: translateX(0); }
+    12.5% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    37.5% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    62.5% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    87.5% { transform: translateX(-300%); }
+    100% { transform: translateX(0); }
+} */
+
+</style>
+<body>
+    <div class="slider">
+        <div class="slides">
+            <div class="slide"><img src="1.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="pexels-james-wheeler-1519088.jpg" alt="Image 2"></div>
+            <div class="slide"><img src="pexels-thierry-fillieul-639086.jpg" alt="Image 3"></div>
+            <div class="slide"><img src="pexels-隔壁光头老王-wangming'photo-354939.jpg" alt="Image 4"></div>
+        </div>
+    </div>
+</body>
+</html>

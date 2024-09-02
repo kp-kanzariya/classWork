@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Image Slider</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .slider {
+            position: relative;
+            max-width: 600px;
+          
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        
+        .slide img{
+        height: 350px;
+        }
+
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <div class="slides">
+            <div class="slide"><img src="/classWork/img/img1.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="/classWork/img/img2.jpg" alt="Image 2"></div>
+            <div class="slide"><img src="/classWork/img/img3.jpg" alt="Image 3"></div>
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+<script>
+    // let slideIndex = 0;
+
+    // function showSlides(index) {
+    //     const slides = document.querySelector('.slides');
+    //     const totalSlides = document.querySelectorAll('.slide').length;
+    //     slideIndex = (index + totalSlides) % totalSlides;
+    //     slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+    // }
+    
+    // function nextSlide() {
+    //     showSlides(slideIndex + 1);
+    // }
+    
+    // function autoPlay() {
+    //     nextSlide();
+    //     setTimeout(autoPlay, 3000); // Change image every 3 seconds
+    // }
+    
+    // showSlides(slideIndex);
+    // autoPlay();
+</script>
+    <script>
+        let slideIndex = 0;
+
+        function showSlides(index) {
+            const slides = document.querySelector('.slides');
+            const totalSlides = document.querySelectorAll('.slide').length;
+            slideIndex = (index + totalSlides) % totalSlides;
+            slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+        }
+
+        function nextSlide() {
+            showSlides(slideIndex + 1);
+        }
+
+        function prevSlide() {
+            showSlides(slideIndex - 1);
+        }
+
+        showSlides(slideIndex);
+
+
+
+    </script>
+    <script>
+        
+//         function showSlides(index) {
+//     const slides = document.querySelector('.slides');
+//     const totalSlides = document.querySelectorAll('.slide').length;
+//     slideIndex = (index + totalSlides) % totalSlides;
+//     slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+// }
+
+// function nextSlide() {
+//     showSlides(slideIndex + 1);
+// }
+
+// function prevSlide() {
+//     showSlides(slideIndex - 1);
+// }
+
+// showSlides(slideIndex);
+
+   </script>
+    
+</body>
+
+</html>

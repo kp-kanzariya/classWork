@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #28a745;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        li button {
+            background-color: #dc3545;
+            border: none;
+            color: #fff;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        li button:hover {
+            background-color: #c82333;
+        }
+    </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>To-Do List</h1>
+    <form id="toDoForm">
+      <input type="text" id="taskInput" placeholder="Add a new task..." required>
+      <button type="submit">Add</button>
+    </form>
+    <ul id="taskList"></ul>
+  </div>
+
+
+<script>
+//Function to render the tasks from local storage
+function renderTasks() {
+//json.parse exchange the data from/to server data is always a string it make js object
+  const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+  const taskList = document.getElementById('taskList');
+  taskList.innerHTML = ''; // Clear the current list
+
+  tasks.forEach((task) => {
+//it iterate for every task and create li and add task to it
+    const li = document.createElement('li');
+    li.textContent = task;
+
+//delete button add style with css, create with createElement('tagName') add click event
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.addEventListener('click', function() {
+      removeTask(task);
+    });
+
+//add delete btn after li and add li in ul=taskList 
+    li.appendChild(deleteButton);
+    taskList.appendChild(li);
+  });
+}
+
+// Function to add a task to local storage
+function addTask(task) {
+  const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+  tasks.push(task);
+//save sata to local storage with key and value parameter || getItem is read data from with only key
+//stringify make js object to string that pass to json || localStorage.removeItem() || .clear()
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+  renderTasks();
+}
+
+//Function to remove a task from local storage
+function removeTask(task) {
+  let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+//filter return array para can be value ,index ,arr
+  tasks = tasks.filter(t => t !== task);
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+  renderTasks();
+}
+
+document.getElementById('toDoForm').addEventListener('submit', function(event) {
+// it prevent the event to happpen here it will stop to submit event
+    event.preventDefault();
+  const taskInput = document.getElementById('taskInput');
+  const taskText = taskInput.value;
+  addTask(taskText);
+  taskInput.value = '';
+});
+
+// Render tasks on page load
+renderTasks();
+
+</script>
+
+    <!-- <script>
+        document.getElementById('toDoForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Get the task input
+            const taskInput = document.getElementById('taskInput');
+            const taskText = taskInput.value;
+
+            // Create a new list item
+            const li = document.createElement('li');
+            li.textContent = taskText;
+
+            // Create a delete button
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Delete';
+            deleteButton.addEventListener('click', function () {
+                li.remove();
+            });
+
+            // Add the delete button to the list item
+            li.appendChild(deleteButton);
+
+            // Add the list item to the task list
+            document.getElementById('taskList').appendChild(li);
+
+            // Clear the task input
+            taskInput.value = '';
+        });
+
+    </script> -->
+</body>
+
+</html>

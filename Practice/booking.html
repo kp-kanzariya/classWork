@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Booking App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        main {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #seatMap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .seat {
+            width: 30px;
+            height: 30px;
+            background-color: #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .seat.selected {
+            background-color: #007bff;
+        }
+
+        .seat.occupied {
+            background-color: #ff0000;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Ticket Booking App</h1>
+    </header>
+
+    <main id="app">
+        <!-- Event Listing -->
+        <section id="events">
+            <h2>Available Events</h2>
+            <ul id="eventList"></ul>
+        </section>
+
+        <!-- Event Details -->
+        <section id="eventDetails" style="display: none;">
+            <h2>Event Details</h2>
+            <div id="eventInfo"></div>
+            <button id="selectSeatsBtn">Select Seats</button>
+        </section>
+
+        <!-- Seat Selection -->
+        <section id="seatSelection" style="display: none;">
+            <h2>Select Seats</h2>
+            <div id="seatMap"></div>
+            <button id="proceedToSummaryBtn">Proceed to Summary</button>
+        </section>
+
+        <!-- Booking Summary -->
+        <section id="bookingSummary" style="display: none;">
+            <h2>Booking Summary</h2>
+            <div id="summaryDetails"></div>
+            <button id="confirmBookingBtn">Confirm Booking</button>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const events = [
+                { id: 1, name: 'Concert A', date: '2023-08-01', venue: 'Stadium 1', seats: 50 },
+                { id: 2, name: 'Concert B', date: '2023-08-05', venue: 'Stadium 2', seats: 100 },
+            ];
+
+            const eventList = document.getElementById('eventList');
+            const eventDetails = document.getElementById('eventDetails');
+            const eventInfo = document.getElementById('eventInfo');
+            const seatSelection = document.getElementById('seatSelection');
+            const seatMap = document.getElementById('seatMap');
+            const bookingSummary = document.getElementById('bookingSummary');
+            const summaryDetails = document.getElementById('summaryDetails');
+
+            let selectedEvent = null;
+            let selectedSeats = [];
+
+            // Display available events
+            function displayEvents() {
+                events.forEach(event => {
+                    const li = document.createElement('li');
+                    li.textContent = `${event.name} - ${event.date} at ${event.venue}`;
+                    li.addEventListener('click', () => showEventDetails(event));
+                    eventList.appendChild(li);
+                });
+            }
+
+            // Show event details
+            function showEventDetails(event) {
+                selectedEvent = event;
+                eventDetails.style.display = 'block';
+                eventInfo.textContent = `${event.name} - ${event.date} at ${event.venue}`;
+            }
+
+            // Display seat selection
+            function displaySeatSelection() {
+                seatSelection.style.display = 'block';
+                seatMap.innerHTML = '';
+                for (let i = 1; i <= selectedEvent.seats; i++) {
+                    const seat = document.createElement('div');
+                    seat.classList.add('seat');
+                    seat.textContent = i;
+                    seat.addEventListener('click', () => toggleSeatSelection(seat, i));
+                    seatMap.appendChild(seat);
+                }
+            }
+
+            // Toggle seat selection
+            function toggleSeatSelection(seat, seatNumber) {
+                if (seat.classList.contains('selected')) {
+                    seat.classList.remove('selected');
+                    selectedSeats = selectedSeats.filter(num => num !== seatNumber);
+                } else {
+                    seat.classList.add('selected');
+                    selectedSeats.push(seatNumber);
+                }
+            }
+
+            // Display booking summary
+            function displayBookingSummary() {
+                bookingSummary.style.display = 'block';
+                summaryDetails.innerHTML = `
+      Event: ${selectedEvent.name}<br>
+      Date: ${selectedEvent.date}<br>
+      Venue: ${selectedEvent.venue}<br>
+      Seats: ${selectedSeats.join(', ')}
+    `;
+            }
+
+            // Event listeners
+            document.getElementById('selectSeatsBtn').addEventListener('click', displaySeatSelection);
+            document.getElementById('proceedToSummaryBtn').addEventListener('click', displayBookingSummary);
+
+            displayEvents();
+        });
+
+    </script>
+</body>
+
+</html>

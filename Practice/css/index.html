@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex & Grid Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            /*content box*/
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: blueviolet;
+            margin: 1.3em 0;
+
+        }
+
+        .logo {
+            padding: 0.7em 0;
+        }
+
+        .search {
+            background-color: rgb(255, 255, 255);
+            border: 2px solid gray;
+            padding: 3px;
+            border-radius: 0.7em;
+        }
+
+        .search input {
+            margin: 0 5px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            width: 300px;
+
+        }
+
+        .search i {
+            padding: 3px;
+        }
+
+        .login {
+            display: flex;
+
+        }
+        .icons i{
+            display: none;
+            font-size: 1.6em;
+            padding: 3.3px 0;
+
+            
+
+        }
+        .icons{
+            /* background-color: antiquewhite; */
+            text-align: center;
+
+        }
+        .user{
+            font-size: 1.3em;
+            border: 1px solid gray;
+            background-color: antiquewhite;
+            border-radius: 50%;
+            padding: 5px;
+            margin: 0 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="page">
+        <header>
+
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="/classWork/img/logo.svg" height="40px" alt="">
+                </div>
+                <div class="search">
+
+                    <input type="text">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </div>
+                <div class="login">
+                    <div class="icons">
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-instagram"></i>
+
+                    </div>
+                    <div class="user">
+                        <i class="fa-regular fa-user"></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+</body>
+
+</html>

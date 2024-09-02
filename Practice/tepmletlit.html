@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card data using object</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .card h2 {
+            margin: 15px 0 10px 0;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .card button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .card button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="card"></div>
+      
+    
+
+
+    <script>
+
+                                                        
+        imgs = document.querySelector(".imgs")
+        names = document.querySelector(".names")
+        summeries = document.querySelector(".summeries")
+        btns = document.querySelector(".btns")
+
+        cards = [
+            { imgs: "/classWork/img/img1.jpg", names: "John", summeries: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan", btns: "View More" },
+            { imgs: "/classWork/img/img2.jpg", names: "Roy", summeries: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan", btns: "View More" },
+            { imgs: "/classWork/img/img3.jpg", names: "Robert", summeries: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan", btns: "View More" },
+
+        ]
+        let a = cards.map((v) => {
+        return    `<br /><img class="imgs" src=${v.imgs} height="50px" alt="Profile Picture">
+        <h2 class="names">${v.names}</h2>
+        <p class="summeries">${v.summeries}</p><br />
+        <button class="btns">${v.btns}</button>`
+        })
+
+        // document.write(a)
+        document.getElementById('card').innerHTML = a
+
+    </script>
+
+    <!-- <h2 id="h2"></h2> -->
+    <!-- <script>
+        const students=[
+        {id:1,name:"kuparth",course:"react"},
+        {id:2,name:"jaydip",course:"php"},
+        {id:3,name:"jaydip",course:"java"},
+        {id:4,name:"kaushik",course:"AI"}
+        ]
+
+        table =`<table border="1">
+        <tr>
+    <th>id</th>
+    <th>name</th>
+    <th>course</th>
+</tr>`
+
+let a =students.map((v)=>{
+   return `
+        <tr>
+            <td>${v.id}</td>
+            <td>${v.name}</td>
+            <td>${v.course}</td>
+        </tr>
+    `
+})
+
+// document.write(a)
+document.getElementById('h2').innerHTML= table + a+"</table>"
+
+</script> -->
+</body>
+
+</html>

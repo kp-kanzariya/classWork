@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card obj</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            width: 70vw;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+
+        .cards {
+            background-color: #9af1ff;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 10px;
+        }
+
+        .card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .card h2 {
+            margin: 15px 0 10px 0;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .cont {
+            background-color: #9af1ff;
+
+
+        }
+
+        .card button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .card button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="card" class="card"></div>
+
+
+
+
+    <script>
+
+
+        imgs = document.querySelector(".imgs")
+        names = document.querySelector(".names")
+        summeries = document.querySelector(".summeries")
+        btns = document.querySelector(".btns")
+
+        // cards = [
+        //     {
+        //         imgs: { srcs: "/classWork/img/img1.jpg", classes: "imgs", ids: "im1" },
+        //         names: { n1: "joy  sio", c1: "names" },
+        //         summeries: {
+        //             s1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan",
+        //             c1: "summeries"
+        //         },
+        //         btns: { b1: "View More", c1: "btns" }
+        //     },
+        //     { imgs: { srcs: "/classWork/img/img2.jpg", classes: "imgs", ids: "im1" }, names: { n1: "Robert siber", c1: "names" }, summeries: { s1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan", c1: "summeries" }, btns: { b1: "View More", c1: "btns" } },
+        //     { imgs: { srcs: "/classWork/img/img3.jpg", classes: "imgs", ids: "im1" }, names: { n1: "Roy mehra ", c1: "names" }, summeries: { s1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan", c1: "summeries" }, btns: { b1: "View More", c1: "btns" } },
+
+        // ]
+        cards = [
+            {
+                imgs: "/classWork/img/img1.jpg",
+                names: { n1: "joy  sio" },
+                summeries: {
+                    s1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan"
+                },
+                btns: { b1: "View More" }
+            },
+            { imgs: "/classWork/img/img2.jpg", names: { n1: "Robert siber" }, summeries: { s1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan" }, btns: { b1: "View More" } },
+            { imgs: "/classWork/img/img3.jpg", names: { n1: "Roy mehra " }, summeries: { s1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan" }, btns: { b1: "View More" } },
+
+        ]
+        let a = cards.map((v) => {
+            return `<div class='cards'>
+            <br /><img class="imgs" src=${v.imgs} height="50px" alt="Profile Picture">
+        <h2 class="names">${v.names.n1}</h2>
+        <p class="summeries">${v.summeries.s1}</p><br />
+        <button class=btns>${v.btns.b1}</button>
+        </div>`
+        })
+
+        // document.write(a)
+        document.getElementById('card').innerHTML = a
+
+
+
+
+        // function greet(name, callback) {
+        //     console.log('Hello ' + name);
+        //     callback();
+        // }
+
+        // function sayGoodbye() {
+        //     console.log('Goodbye!');
+        // }
+
+        // greet('Alice', sayGoodbye);
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(to right, blue, rgb(255, 42, 184));
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            margin-top: 180px;
+        }
+
+        .contact {
+            width: 800px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 8px 10px 3px 2px rgba(255, 255, 255, 0.474);
+
+        }
+
+        .h1 h1 {
+            background: linear-gradient(to right, rgb(255, 19, 157), blue);
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        .form {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px;
+        }
+
+        .form input {
+            width: 330px;
+            border: none;
+            outline: none;
+        }
+
+        .c1 {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+
+        }
+
+        .c2 {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        .fname,
+        .lname,
+        .email,
+        .web,
+        .text1 {
+            margin: 10px 0;
+            border-bottom: 1px solid gray;
+            padding: 5px 0;
+
+        }
+
+        .text1 {
+            /* background-color: green; */
+            display: inline-block;
+        }
+
+        .text1 {
+            width: 700px;
+            margin-left: 50px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid gray;
+        }
+
+        .text1 input {
+            width: 690px;
+            border: none;
+            outline: none;
+        }
+
+        .btn button {
+            padding: 9px 30px;
+            border: none;
+            background: linear-gradient(to right, rgb(255, 0, 144), blue);
+            color: white;
+            font-size: large;
+            border-radius: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contact">
+        <div class="h1">
+            <center>
+                <h1>Responsive Contact Form</h1>
+            </center>
+        </div>
+        <div class="form">
+            <div class="c1">
+                <div class="fname">
+                    First Name: <br>
+                    <input type="text">
+                </div>
+                <div class="email">
+                    Email Address: <br>
+                    <input type="text">
+                </div>
+
+
+            </div>
+            <div class="c2">
+                <div class="lname">
+                    Last Name: <br>
+                    <input type="text">
+                </div>
+
+                <div class="web">
+                    Website Name: <br>
+                    <input type="text">
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="text1">
+            Write Your Message: <br>
+            <input type="text">
+        </div>
+        <div class="btn">
+            <center> <button>Submit</button></center>
+        </div>
+    </div>
+
+</body>
+
+</html>
