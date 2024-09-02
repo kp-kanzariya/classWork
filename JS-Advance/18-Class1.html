@@ -1,39 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-  
-    
+
+
     <script>
 
+        class Test {
+            x = 12; //cant declare here only initialise
+            y = "hi";
 
-
-        class Test 
-        {
-             x=12; //cant declare here only initialise
-             y="hi";
-
-           a =  function fun1() //cant write direct function with functtion keyword ,must store in var
+            a = function fun1() //cant write direct function with functtion keyword ,must store in var
             {
                 document.write("fun1<br>")
             }
 
-           b = function ()
-            {
+            b = function () {
                 document.write("Anonymous<br>")
             }
 
-          c = ()=>
-            {
+            c = () => {
                 document.write("Arrow<br>")
             }
 
-            fun2()
-            {
+            fun2() {
                 document.write("fun2<br>")
             }
 
@@ -42,8 +38,7 @@
                 document.write("STATIC<br>")
             }
 
-            constructor()
-            {
+            constructor() {
                 document.write("constructor<br>")
             }
 
@@ -66,4 +61,5 @@
 
     </script>
 </body>
+
 </html>

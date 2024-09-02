@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+    <!-- The h1 element where the result of the asynchronous operation will be displayed -->
     <h1></h1>
-    
+
     <script>
-        // async function test()
-        // {
-        //     document.querySelector('h1').innerHTML = await "123"
+        // Example of using an async function to update the content of the h1 tag with a string "123"
+        // async function test() {
+        //     document.querySelector('h1').innerHTML = await "123";
         // }
-        // test()
+        // test();
 
-       async function getPromise()
-       {
-        let p = new Promise((r,f)=>{
-            return r('connected ...!')
-        })
+        // An asynchronous function called getPromise
+        async function getPromise() {
+            // Creating a new promise that resolves with the string 'connected ...!'
+            let p = new Promise((resolve, reject) => {
+                return resolve('connected ...!');
+            });
 
-        // console.log(p)
-        document.querySelector('h1').innerHTML = await p
-;       }
+            // Await the resolution of the promise and then update the h1 element with the resolved value
+            document.querySelector('h1').innerHTML = await p;
+        }
 
-       getPromise()
+        // Call the asynchronous function getPromise to execute the code
+        getPromise();
     </script>
 </body>
+
 </html>

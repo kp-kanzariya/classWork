@@ -11,7 +11,6 @@
 
     <script>
 
-
         const students = {
             fullName: function () {
                 return this.fname + " " + this.lname
@@ -31,7 +30,6 @@
 
         // console.log(students.fullName())
 
-
         console.log(students.fullName.apply(stu1))
         console.log(students.fullName.call(stu2))
 
@@ -42,8 +40,6 @@
         const person = { name: 'Alice' };
 
         greet.apply(person, ['Hello', '!']); // "Hello, Alice!"
-
-
 
     </script>
 
