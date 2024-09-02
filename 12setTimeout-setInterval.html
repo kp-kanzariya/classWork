@@ -1,36 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-
-        function test()
-        {
+        function test() {
             document.write("hello<br>");
         }
 
-        // let timerid = setTimeout("test()",5000,args1,args2);
-        // clearTimeout(timerid)
-        // setTimeout("test()",5000);
-        // setInterval(test,1000);
-        // test()
-        // test()
-        // test()
-        // test()
+        // setTimeout example:
+        // Executes the function `test` after 5000 milliseconds (5 seconds)
+        // let timerid = setTimeout("test()", 5000, args1, args2); // Deprecated syntax, args1 and args2 are ignored in this case
+        // clearTimeout(timerid); // Cancels the timeout set by setTimeout
+        // setTimeout("test()", 5000); // Executes `test()` after 5 seconds, using string syntax (not recommended)
 
-        // setInterval('test()',1000)
-        // setInterval(test,100)
+        // setInterval example:
+        // Repeatedly executes the function `test` every 1000 milliseconds (1 second)
+        // setInterval(test, 1000); // Executes `test()` every 1 second
 
-        // setInterval('functionName()',timeInMs);
-        //setInterval(fuctionName,timeInMs)
+        // Example of calling `test()` multiple times directly
+        // test(); // Outputs "hello" immediately
+        // test(); // Outputs "hello" immediately
+        // test(); // Outputs "hello" immediately
+        // test(); // Outputs "hello" immediately
 
-        //setTimeout("functionName()",timeInMs);
-        // setTimeout(fuctionName,timeInMs)
+        // Alternative setInterval syntax:
+        // setInterval('test()', 1000); // Executes `test()` every 1 second using string syntax (not recommended)
+        // setInterval(test, 100); // Executes `test()` every 100 milliseconds
+
+        // Alternative setTimeout syntax:
+        // setTimeout("functionName()", timeInMs); // Executes `functionName` after `timeInMs` milliseconds using string syntax (not recommended)
+        // setTimeout(functionName, timeInMs); // Executes `functionName` after `timeInMs` milliseconds (recommended syntax)
     </script>
+    <!--
+    Key Points:
+
+    setTimeout Function:
+    Purpose: Executes a function once after a specified number of milliseconds.
+    Syntax: setTimeout(function, delay) where function is the function to execute and delay is the time in milliseconds.
+    Example: setTimeout(test, 5000); will call the test function after 5 seconds.
+    Clearing Timeout: clearTimeout(timerid); cancels a timeout set by setTimeout, if needed.
+
+    setInterval Function:
+    Purpose: Repeatedly executes a function at specified intervals (in milliseconds).
+    Syntax: setInterval(function, interval) where function is the function to execute and interval is the time in
+    milliseconds.
+    Example: setInterval(test, 1000); will call the test function every 1 second.
+
+    Deprecated Syntax:
+    Using strings (e.g., setTimeout("test()", 5000)) is deprecated and not recommended. It's better to use function
+    references directly (setTimeout(test, 5000)).
+
+    Immediate Execution:
+    Directly calling test() will execute the function immediately without any delay.
+
+    Notes:
+
+    Function vs. String Syntax: Always prefer using function references over string syntax for setTimeout and
+    setInterval. The string syntax is less secure and can lead to code injection vulnerabilities.
     
+    clearTimeout and clearInterval: These functions are used to cancel timeouts or intervals if needed. You need to
+    store the return value of setTimeout or setInterval in a variable and pass that variable to clearTimeout or
+    clearInterval respectively.
+    
+
+
+-->
 </body>
+
 </html>

@@ -1,72 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> <!-- Specifies the character encoding for the HTML document -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- Ensures proper scaling on mobile devices -->
+    <title>Document</title> <!-- Title of the document, displayed in the browser tab -->
+
+    <!-- Internal CSS styling -->
     <style>
-        .xyz 
-        {
+        /* Class to style an element with a height and width of 100px and a light blue background */
+        .xyz {
             height: 100px;
-            width: 100px;background: lightblue;
-           
+            width: 100px;
+            background: lightblue;
         }
 
-        .abc 
-        {
+        /* Class to style an element with a large font size */
+        .abc {
             font-size: 78px;
         }
 
-        .test 
-        {
-            animation:test123 1s;
+        /* Class to add an animation effect to an element */
+        .test {
+            animation: test123 1s;
+            /* Animation named 'test123' that lasts 1 second */
         }
 
-        @keyframes test123 
-        {
-            from{ transform: translate(-300px,0);}
-            to{transform: translate(0px,0);}
+        /* Keyframes for the animation 'test123' */
+        @keyframes test123 {
+            from {
+                transform: translate(-300px, 0);
+                /* Starts 300px to the left */
+            }
+
+            to {
+                transform: translate(0px, 0);
+                /* Ends at the original position */
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <!-- inline 
-    internal -->
+    <!-- HTML Elements with inline and internal styling applied through classes and JavaScript -->
 
-    <h1 id="i1"  onclick="testColor()">HELLO</h1>
+    <!-- Header element with an id of 'i1', clicking this element triggers the 'testColor' function -->
+    <h1 id="i1" onclick="testColor()">HELLO</h1>
 
+    <!-- Another header element with a class 't1' -->
     <h2 class="t1">sdfs</h2>
+
+    <!-- Internal JavaScript -->
     <script>
-        x =  document.getElementById('i1');
-        y = document.querySelector('.t1'); //for one selector 
+        // Access the element with id 'i1' and store it in the variable `x`
+        x = document.getElementById('i1');
 
-        // y.className = "xyz abc"
-        //  y.className = "abc"
+        // Access the first element with class 't1' using querySelector and store it in the variable `y`
+        y = document.querySelector('.t1'); // querySelector returns the first matching element
 
-        y.classList.add('xyz','abc')//add is method 
+        // Add the classes 'xyz' and 'abc' to the element `y` using classList.add()
+        y.classList.add('xyz', 'abc'); // Adds multiple classes to `y`
 
-        console.log(y)
+        // Print the `y` element to the console to inspect it
+        console.log(y);
 
-     
-   function testColor()
-   {
-    x.classList.add('test')
-        x.style.color = "#fff"
-        x.style.height = "100px"
-         x.style.width = "200px"
-          x.style.backgroundColor = "#000"
-          x.style.fontSize = "34px"
-   }
-   
+        // Function triggered when the element `x` (with id 'i1') is clicked
+        function testColor() {
+            // Add the 'test' class to the element `x`, which triggers the animation
+            x.classList.add('test');
 
-          console.log(x)
+            // Modify inline styles for the element `x`
+            x.style.color = "#fff"; // Set text color to white
+            x.style.height = "100px"; // Set height to 100px
+            x.style.width = "200px"; // Set width to 200px
+            x.style.backgroundColor = "#000"; // Set background color to black
+            x.style.fontSize = "34px"; // Set font size to 34px
+        }
 
-    //    var = tag  
-    //    tag.method/function()
-    //    tag.attribute
+        // Print the `x` element to the console to inspect it
+        console.log(x);
 
+        // Notes:
+        // var = tag         // Assigning HTML elements to variables
+        // tag.method()      // Invoking methods on elements (e.g., classList.add())
+        // tag.attribute     // Accessing attributes of elements (e.g., style)
     </script>
-    
+
 </body>
+
 </html>

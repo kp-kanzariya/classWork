@@ -8,29 +8,27 @@
 </head>
 
 <body>
-  <h1 id="i1" onclick="test()">Hello</h1>
-  <div class="t1" onmouseenter="test()">DIV 1</div>
-  <p id="para" ondblclick="test()">
+  <h1 id="i1">Hello</h1>
+  <div class="t1">DIV 1</div>
+  <p id="para">
     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut facilis
     debitis corrupti odio praesentium sint, quo accusamus nulla in non
     excepturi iusto provident, soluta officia voluptatum eligendi, illum
     asperiores earum!
   </p>
   <a href="xyz.html" id="a1">LINK</a>
-  <input onkeydown="test()" type="text" id="inp1" value="INPUT TEXT" onblur=" t()" />
-  <button onmouseleave="test()">sdf</button>
+  <input type="text" id="inp1" value="INPUT TEXT" />
+  <button id="btn">sdf</button>
   <img src="x.jpg" alt="Img Not Available" id="img1" />
 
   <script>
-    h1 = document.getElementById("i1");
-
-    //    alert( inp1.value)
-    div1 = document.querySelector(".t1");
-    para1 = document.getElementById("para");
-    anc1 = document.getElementById("a1");
-
-    inp1 = document.getElementById("inp1");
-    img1 = document.getElementById("img1");
+    const h1 = document.getElementById("i1");
+    const div1 = document.querySelector(".t1");
+    const para1 = document.getElementById("para");
+    const anc1 = document.getElementById("a1");
+    const inp1 = document.getElementById("inp1");
+    const img1 = document.getElementById("img1");
+    const btn = document.getElementById("btn");
 
     function test() {
       para1.innerHTML = inp1.value;
@@ -38,13 +36,21 @@
       alert(img1.alt);
     }
 
-    div1.innerHTML = img1.alt;
-
-    anc1.href = img1.alt;
-
     function t() {
       console.log(h1, div1, para1, anc1, inp1, img1);
     }
+
+    // Add event listeners
+    h1.addEventListener("click", test);
+    div1.addEventListener("mouseenter", test);
+    para1.addEventListener("dblclick", test);
+    inp1.addEventListener("keydown", test);
+    inp1.addEventListener("blur", t);
+    btn.addEventListener("mouseleave", test);
+
+    // Set initial values
+    div1.innerHTML = img1.alt;
+    anc1.href = img1.alt;
   </script>
 </body>
 

@@ -1,49 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        .d1 
-        {
+        .d1 {
             height: 50px;
-            width: 50px;background: #32477d;
+            width: 50px;
+            background: #32477d;
             position: absolute;
-            top:-12px;
-            left:-12px;
+            top: -12px;
+            left: -12px;
         }
     </style>
 </head>
+
 <body>
 
-    <!-- [1,2,3] 0=>,1=>2,2=>3 
-   
-    
-    -->
-
-    
     <div class="d1"></div>
 
     <script>
-        // obj =  {23:1,"hi":2,t1:20}
+        // Select the <div> element with the class 'd1'
+        const div1 = document.querySelector('.d1');
 
-        // document.write(obj.t1)
-
-        div1 = document.querySelector('.d1')
-
-        console.log(div1)       
-        
-
-         window.addEventListener('mousemove',GetDiv)
-        function GetDiv(xyz)
-        {
-            console.log(xyz.clientY)
-            // console.log(xyz);//clietnX:12/23 clientY:45/67
-             div1.style.marginLeft =xyz.clientX + "px";//23/45 23 + "px"
-             div1.style.marginTop =xyz.clientY + "px";//45//78
+        // Function to update the position of the <div> based on mouse movement
+        function GetDiv(event) {
+            // Update the position of the <div> with mouse coordinates
+            div1.style.marginLeft = event.clientX + 'px';
+            div1.style.marginTop = event.clientY + 'px';
         }
-       
+
+        // Add an event listener to the window for mousemove events
+        window.addEventListener('mousemove', GetDiv);
     </script>
 </body>
+
 </html>

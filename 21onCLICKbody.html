@@ -1,48 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        div 
-        {
+        div {
             height: 100px;
             width: 100px;
             background: coral;
         }
     </style>
 </head>
-<body  onclick="hideDiv()">   
+<body>
 
     <div></div>
-    
 
     <script>
-        d1 = document.querySelector('div')
+        // Select the <div> element
+        const d1 = document.querySelector('div');
 
-    //     window.addEventListener("click",hideDiv)
-    //    function hideDiv()
-    //    {
-    //      d1.style.display = "none"
-    //    }
+        // Function to hide the <div>
+        function hideDiv() {
+            d1.style.display = 'none';
+        }
 
-    // window.addEventListener("click",  function hideDiv()
-    //    {
-    //      d1.style.display = "none"
-    //    })
+        // Add event listener using named function
+        window.addEventListener('click', hideDiv);
 
-    //Anonymous Function
-    // window.addEventListener("click",  function ()
-    //    {
-    //      d1.style.display = "none"
-    //    })
+        // Alternatively, you can use an anonymous function
+        // window.addEventListener('click', function() {
+        //     d1.style.display = 'none';
+        // });
 
-    window.addEventListener("click",   ()=>
-       {
-         d1.style.display = "none"
-       })
-     
+        // Or use an arrow function (modern ES6+ syntax)
+        // window.addEventListener('click', () => {
+        //     d1.style.display = 'none';
+        // });
+
     </script>
 </body>
 </html>

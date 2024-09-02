@@ -1,56 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> <!-- Specifies the character encoding for the HTML document -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- Ensures proper scaling on mobile devices -->
+    <title>Document</title> <!-- Title of the document, displayed in the browser tab -->
 </head>
+
 <body>
 
-    <!-- Variable/Identifier : to store values 
-    Ways:
-
-    1. var (global)
-    2. let (block)
-    3. const (block)
-
-    Scopes: 
-    1. global 
-    2. Local 
-    3. Block 
-    4. Functional  
-    5. variable
-
-    var/let/const var123Name = value;
+    <!-- 
+    Variables/Identifiers: Used to store values.
     
-       Loosely typed language : we dont have to metion the type
+    Ways to declare variables:
+    1. `var`: Global scope (can be redeclared and updated)
+    2. `let`: Block scope (cannot be redeclared in the same scope, but can be updated)
+    3. `const`: Block scope (cannot be redeclared or updated, must be initialized when declared)
+
+    Scopes:
+    1. Global Scope: Variables declared outside of any function, accessible from anywhere in the code.
+    2. Local Scope: Variables declared within a function, accessible only within that function.
+    3. Block Scope: Variables declared within a block (e.g., inside curly braces `{}`), accessible only within that block.
+    4. Functional Scope: Variables declared inside a function, accessible only within that function.
+    5. Variable Scope: Refers to the scope in which the variable is available.
+
+    JavaScript is a loosely typed language: You don't need to specify the data type of a variable when declaring it. The type is determined at runtime based on the value assigned.
     
+    Example variable declarations:
+    var/let/const var123Name = value; 
     -->
-    
- 
-    
-
 
     <script>
-/*
-        var x=1;
-        var x=23.56;
-        x="VAR";
-        document.write(x) */
+        // Using `var` (Global scope)
+        /*
+        var x = 1; // Variable `x` is assigned an integer value
+        var x = 23.56; // `x` is redeclared and assigned a float value
+        x = "VAR"; // `x` is reassigned a string value
+        document.write(x); // Output: VAR
+        */
 
-        // let x=1;
-        // // let x=23.56;
-        // x="LET";
-        // document.write(x)
+        // Using `let` (Block scope)
+        /*
+        let x = 1; // Variable `x` is assigned an integer value
+        // let x = 23.56; // Uncommenting this will cause an error because `let` cannot be redeclared in the same block
+        x = "LET"; // `x` is reassigned a string value
+        document.write(x); // Output: LET
+        */
 
-
-        const x=1;
-        // const x=23.56;
-        // x="LET";
-        document.write(x)
-        
-
+        // Using `const` (Block scope)
+        const x = 1; // Variable `x` is assigned an integer value
+        // const x = 23.56; // Uncommenting this will cause an error because `const` cannot be redeclared or reassigned
+        // x = "LET"; // Uncommenting this will also cause an error because `const` cannot be reassigned
+        document.write(x); // Output: 1 (since `const` cannot be changed after initialization)
     </script>
-    
+
 </body>
+
 </html>

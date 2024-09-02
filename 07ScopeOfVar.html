@@ -1,50 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta charset="UTF-8" /> <!-- Specifies the character encoding for the HTML document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Ensures proper scaling on mobile devices -->
+    <title>Document</title> <!-- Title of the document, displayed in the browser tab -->
   </head>
   <body>
     <script>
-      //  # global scope
-      // const x=12;
+      // Global Scope Example:
+      /*
+      const x = 12; // Declares a constant variable `x` with a value of 12 in the global scope
 
-      // if(x)
-      // {
-      //     document.write(x)
-      // }
-      // document.write(x)
+      if (x) { // Checks if `x` is truthy
+        document.write(x); // Outputs: 12
+      }
+      document.write(x); // Outputs: 12 (since `x` is globally scoped)
+      */
 
-      // if (1==1) {
-      //   const x = 12;//local
-      //   document.write(x);
-      // }
-      // document.write(x);
+      // Block Scope Example with `const`:
+      /*
+      if (1 == 1) {
+        const x = 12; // Declares a block-scoped constant `x` within the `if` block
+        document.write(x); // Outputs: 12 (inside the block)
+      }
+      document.write(x); // Error: `x` is not defined outside the block
+      */
 
+      // Functional Scope Example:
+      /*
+      function test() {
+        var x = 123; // `var` creates a function-scoped variable
+        document.write(x); // Outputs: 123 (inside the function)
+      }
+      test(); // Calls the `test` function
+      document.write(x); // Error: `x` is not defined outside the function
+      */
 
-    // function test()
-    // {
-    //     x=123; // with var let
-    //     document.write(x)
-    // }
-    // test()
-    // document.write(x)  //before test()
-   
-    // if(1==1)
-    // {
-    //     const x=12;
-    //     document.write(x)
-    // }
-    // document.write(x)
+      // Block Scope with `const` inside an `if` statement:
+      /*
+      if (1 == 1) {
+        const x = 12; // Declares a block-scoped constant `x` inside the `if` block
+        document.write(x); // Outputs: 12
+      }
+      document.write(x); // Error: `x` is not defined outside the block
+      */
 
-    for( i=1;i<4;i++) //with var let const
-    {
-        document.write(i+"<br>");// 1 2 3
-        // document.write("<br>")
-    }
-    document.write(i+"<br>");// 4
-   
+      // Loop Example with `var`, `let`, and `const`:
+      // `var` is function-scoped, so it will be accessible outside the loop.
+      // `let` and `const` are block-scoped, so they will not be accessible outside the loop.
+      for (var i = 1; i < 4; i++) { // Replace `var` with `let` or `const` to see the difference
+        document.write(i + "<br>"); // Outputs: 1, 2, 3 (inside the loop)
+      }
+      document.write(i + "<br>"); // Outputs: 4 (since `var` is function-scoped, `i` is accessible outside the loop)
+
+      // If `let` or `const` were used, `i` would not be accessible outside the loop, and this would throw an error.
     </script>
   </body>
 </html>

@@ -1,38 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8"> <!-- Specifies the character encoding for the HTML document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures proper scaling on mobile devices -->
+    <title>Document</title> <!-- Title of the document, displayed in the browser tab -->
 </head>
 <body>
 
+    <!-- An h1 element with an id and class attribute -->
     <h1 id="t1" class="t1"></h1>
     
     <script>
 
-        //to disply in BODY
+        // This line will display the specified text directly in the body of the HTML document.
         document.write("THis is in BODTY TAG <b><u>HI</u></b>")
+        // 'document.write' can be used to add HTML content dynamically but should be used carefully,
+        // as it can overwrite the entire document if used after the page has loaded.
 
-
-        //to display in console
+        // This line will log the specified message to the browser's console for debugging purposes.
         console.log(" THI SIN CONSOLE>..<h1>sdf</h1>")
+        // 'console.log' is used for logging output to the console, often for debugging JavaScript code.
 
+        // The following lines retrieve the h1 element using different DOM methods and log them to the console.
 
-        //to diplay in any TAG
+        // Logs the element with the ID 't1' to the console.
+        console.log(document.getElementById('t1'))
 
-         console.log(document.getElementById('t1'))
+        // Logs the first element that matches the CSS selector '#t1' (by ID).
+        console.log(document.querySelector('#t1'))
 
-       console.log( document.querySelector('#t1'))
-
+        // Logs the first element that matches the CSS selector '.t1' (by class).
         console.log(document.querySelector('.t1'))
 
+        // Logs the first h1 element in the document.
         console.log(document.querySelector('h1'))
 
-        // document.querySelector('h1').innerHTML = "PATA NAH<i>I</i>";
-
+        // Updates the content of the first h1 element using innerText.
+        // 'innerText' sets the text content of an element but does not interpret HTML tags.
         document.querySelector('h1').innerText = "PATA NAH<i>I</i>";
+        // As a result, the HTML tags in this string ("<i>I</i>") will be displayed as plain text, not as italicized text.
 
+        // Uncommenting the next line would set the HTML content of the h1 element, so the <i> tag would be interpreted as HTML:
+        // document.querySelector('h1').innerHTML = "PATA NAH<i>I</i>";
+        
     </script>
 </body>
 </html>

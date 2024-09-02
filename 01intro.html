@@ -2,81 +2,106 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- This meta tag is commented out and specifies a refresh with an incorrect format -->
   <!-- <meta name="viewport" content="3,xyz.html" http-equiv="refresh"> -->
-  <title>Document</title>
+  <title>Document</title> <!-- This is the title of the document, displayed in the browser tab -->
 </head>
 <body>
 
   <h1>
-    hello
+    hello <!-- This is an h1 header that displays the text 'hello' -->
   </h1>
+
+  <!-- The following content provides an overview of JavaScript concepts -->
 
   Javascript: 
 
+  <!-- Client-side scripting language -->
   =>Client -side scripting language
+  <!-- JavaScript follows the Object-Oriented Programming (OOP) paradigm -->
   => it follows OOP  (Object Oriented Programming)
 
+  <!-- This is an example expression in JavaScript -->
   x+y =23
-class Test 
-{
-  var
-  function test()
+
+  <!-- Example of a JavaScript class definition -->
+  class Test 
   {
-    <x></x>
-    <y></y>
+    var // Declares a variable (this line is not complete)
+    function test() // Defines a method called 'test'
+    {
+      <x></x> <!-- This is not valid JavaScript code -->
+      <y></y> <!-- These should be variables or HTML elements, not tags -->
+    }
   }
-}
 
-xyz = new Test;
-xyz.var 
-xyz.test()
+  <!-- Creating an instance of the class 'Test' -->
+  xyz = new Test;
+  xyz.var // Accessing a variable of the class instance (but 'var' is not defined)
+  xyz.test() // Calling the 'test' method on the instance 'xyz'
 
-document.getElementId()//tag 
+  <!-- Using the Document Object Model (DOM) to manipulate HTML elements -->
+  document.getElementId()//tag 
+  // This line has a typo; it should be `document.getElementById()` to get an element by its ID.
 
-var = tag 
-var.attribute 
-var.methods()
+  var = tag 
+  var.attribute 
+  var.methods() 
+  // These are generic references to working with elements in the DOM.
 
-document.write()
+  document.write() 
+  // This is used to write directly into the HTML document, replacing the current content.
 
-  => DOM ( Document Object Model)
+  => DOM ( Document Object Model) 
   => Dynamic Changes 
+  // JavaScript allows you to dynamically manipulate the structure and content of web pages using the DOM.
 
+  <!-- JavaScript can be included in two ways: internally and externally -->
   Two Types :
   1. Internal JS 
   2. External JS
 
-  DOM mehtods :
+  <!-- DOM methods for selecting elements -->
+  DOM methods :
 
+  <!-- An h1 element with an id and class attribute -->
   <h1 id="i1" class="i1"></h1>
+
+  <!-- Different ways to select a single element -->
   To get single Element 
-  => document.getElementById('i1')
-  => document.querySelector('#i1')
-  => document.querySelector('.i1')
-  => document.querySelector('h1')
+  => document.getElementById('i1') // Selects an element by its ID
+  => document.querySelector('#i1') // Selects the first element that matches the CSS selector (#i1)
+  => document.querySelector('.i1') // Selects the first element that matches the CSS class selector (.i1)
+  => document.querySelector('h1')  // Selects the first h1 element
 
-=> to get multiple elements
+  <!-- Different ways to select multiple elements -->
+  To get multiple elements
 
+  <!-- Multiple h1 elements with the same id, class, and name -->
   <h1 id="i1" class="i1" name="i1"></h1>
   <h1 id="i1" class="i1" name="i1"></h1>
   <h1 id="i1" class="i1" name="i1"></h1>
- => document.getElementsByClassName('i1')
- => document.getElementsByName('i1')
- => document.getElementsByTagName('h1')
-  => document.querySelectorAll('#i1')
-  => document.querySelectorAll('.i1')
-  => document.querySelectorAll('h1'). 
-###############
+
+  <!-- Methods to select multiple elements -->
+  => document.getElementsByClassName('i1') // Returns a live HTMLCollection of elements with the specified class name
+  => document.getElementsByName('i1') // Returns a live NodeList of elements with the specified name attribute
+  => document.getElementsByTagName('h1') // Returns a live HTMLCollection of elements with the specified tag name
+  => document.querySelectorAll('#i1') // Returns a static NodeList of elements matching the specified CSS selector
+  => document.querySelectorAll('.i1') // Returns a static NodeList of elements matching the specified CSS class
+  => document.querySelectorAll('h1')  // Returns a static NodeList of h1 elements
+
+  <!-- This writes content to the document, replacing everything currently in it -->
   ==>document.write('123 76*(&(* 98797jkhkjh <h1>sdf</h1>))')
 
-  => document.createElement();
-  =>document.createTextNode();
+  <!-- DOM methods to create elements and text nodes -->
+  => document.createElement(); // Creates an HTML element
+  =>document.createTextNode(); // Creates a text node
 
-
+  <!-- JavaScript should be included just before the closing body tag for performance reasons -->
   ==> always call your customised JS just before BODY tag Ends
 
+  <!-- This is where custom JavaScript code would go -->
   <script>
-
  
   </script>
   

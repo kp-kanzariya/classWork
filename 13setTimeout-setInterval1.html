@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <h1 id="c1"></h1>
 
-    <button onclick="getText()">Click</button>
+<body>
+    <h1 id="c1"></h1> <!-- Element to display the updated text -->
+
+    <button onclick="getText()">Click</button> <!-- Button to trigger the getText function -->
 
     <script>
+        // Get the <h1> element by its ID 'c1' and store it in a variable
+        const h1_tag = document.getElementById('c1');
+        console.log(h1_tag); // Logs the <h1> element to the console
 
-        const h1_tag = document.getElementById('c1')
-        console.log(h1_tag)
+        // Initialize a counter variable
+        let x = 0;
 
-        x=0;
-        function getText()
-        {
-            if(x<=653)
-            {
-                h1_tag.innerHTML =x;//0
-                x++;//1
+        // Function to update the text content of the <h1> element
+        function getText() {
+            if (x <= 653) { // Check if the counter is less than or equal to 653
+                h1_tag.innerHTML = x; // Update the content of the <h1> element with the counter value
+                x++; // Increment the counter
             }
-        //    document.write("123")  //it will clear the screeen before execute only result will appear so avoid document.write in programs
-        
 
-        setInterval(getText,50)
-        // getText()
-        // getText()
-        // getText()
-        // getText()
+            // Document.write() is commented out because it clears the entire HTML document before writing
+            // and is generally not recommended for dynamic updates.
+
+            // Use setInterval to call getText() every 50 milliseconds
+            setInterval(getText, 50);
         }
 
-
+        // Call getText() once to start the interval function
+        // getText() // This call is commented out because setInterval already handles the repeated calls
     </script>
-    
+
 </body>
+
 </html>

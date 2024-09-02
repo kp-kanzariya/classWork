@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 </head>
+
 <body>
+    <div id="output"></div> <!-- Placeholder for content -->
 
     <script>
-        x=12
+        const x = 12;
+        const name = "\"Udit\""; // Escaping double quotes
 
-        document.write("<b><u>" + x + "</u></b>" + "<br>");
-
-        // name = '"Udit"';
-        name = "\"Udit\""; // \n escape sequence
-
-        document.write(name + "<br>");
-        //string literals ` 'kru' "parth" ${x} multiline strings`
-        str = `${x} hello
+        // Using template literals for multi-line content
+        const str = `${x} hello
         
         <table border="1" style="color:red">
             <tr>
-                <td>col </td>
-                <td>col </td>
+                <td>col</td>
+                <td>col</td>
+                <td>col</td>
+            </tr>
+        </table>
+        `;
 
-                <td>col </td>
-
-                </tr>
-            </table>
-        `
-        document.write(str)
+        // Updating content using innerHTML
+        document.getElementById('output').innerHTML = `
+            <b><u>${x}</u></b><br>
+            ${name}<br>
+            ${str}
+        `;
     </script>
-    
 </body>
+
 </html>

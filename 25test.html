@@ -1,27 +1,50 @@
-
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="3,xyz.html" http-equiv="refresh"> -->
     <title>Document</title>
     <style>
-        #test 
-        {
-            height: ;
-        }
-
-        #test::before 
-        {
+        #test::before {
             content: "Ashish";
         }
 
-        #test:hover::before 
-        {
+        #test:hover::before {
             content: "Nitin";
         }
     </style>
 </head>
+
 <body>
-    <h1 id="test""></h1>
+    <h1 id="test"></h1>
 </body>
+<!--
+CSS Breakdown
+
+    #test::before
+        This selector targets the ::before pseudo-element of the element with the ID test. The ::before pseudo-element is used to insert content before the actual content of the element.
+
+    content: "Ashish";
+        Sets the initial content of the ::before pseudo-element to "Ashish". This text will appear before the content of the <h1> element.
+
+    #test:hover::before
+        This selector targets the ::before pseudo-element of the #test element when it is hovered over.
+
+    content: "Nitin";
+        Changes the content of the ::before pseudo-element to "Nitin" when the <h1> element is hovered.
+            
+            Additional Tips
+
+    Text Styling:
+        You can add more styles to the ::before pseudo-element to enhance the visual effect, such as changing color, font-size, or adding a border.
+
+    Content Positioning:
+        Adjust the position of the ::before pseudo-element using properties like position, margin, or padding if needed.
+
+    Browser Testing:
+        Ensure that your CSS works consistently across different browsers by testing the page in various environments.
+
+    Accessibility:
+        Consider adding ARIA attributes if you use ::before or ::after for significant content changes to ensure screen readers can interpret the changes.-->
+
 </html>

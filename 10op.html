@@ -1,73 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> <!-- Specifies the character encoding for the HTML document -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- Ensures proper scaling on mobile devices -->
+    <title>Document</title> <!-- Title of the document, displayed in the browser tab -->
 </head>
+
 <body>
-<!-- 
-    Op :
+    <!-- 
+        JavaScript Operations:
 
-    Arithmetic : +,-,*,/,% 
+        1. Arithmetic Operations:
+            + : Addition
+            - : Subtraction
+            * : Multiplication
+            / : Division
+            % : Modulus (Remainder)
 
-    x=1 
-    y=2
+        Example:
+            x = 1 
+            y = 2
+            x = x + 1; // x becomes 2 (1 + 1)
 
-    x = x+1; //1+1 =2
+        2. Relational/Conditional/Comparison Operators:
+            <  : Less than
+            >  : Greater than
+            <= : Less than or equal to
+            >= : Greater than or equal to
+            == : Equal to (loose comparison)
+            != : Not equal to (loose comparison)
+            ===: Equal to (strict comparison)
+            !==: Not equal to (strict comparison)
 
-    x + y
-    Relational/COnditional/Comparison : <,>,<=,>=,==,!=,===,!==
-    Logical : 
+        3. Logical Operators:
+            && : Logical AND
+            || : Logical OR
+            !  : Logical NOT
 
-    &&(Logical AND) 
+        4. Ternary Operator:
+            (condition) ? xyz : abc;
+            This is a shorthand for an if-else statement.
 
-    || (Logical OR) 
-
-    ! (Logical NOT) 
-
-    Ternary : 
-
-    (condition) ? xyz : abc;
-
-    if(condition)
-    {
-..code
-    }
-
-    else 
-    {
-..code
-    }
-
-    Increment/Decrement :
-POST/PRE inc/dec
-    ++ 
-    -- -->
+        5. Increment/Decrement Operators:
+            ++ : Increment (add 1)
+            -- : Decrement (subtract 1)
+    -->
     <script>
+        // Example of variable assignments and operations
 
-        // x=10;
+        // Uncomment to see how operations work with numbers
+        // x = 10;
+        // x = x + 1; // Increments x by 1
+        // x /= 2;    // Divides x by 2
 
-        // x= x+1;//1+1
-
-        // x /=2 // x = x+1
-
+        // Display the result of x after operations
         // document.write(x + "<br>");
 
-        num1="1"; //hi
-        num2=10;
-        
-// when you try to perform operation on one number and one string then except + sign all will throw an error NaN
-        // document.write(num1 + " " + num2 + "<br>");
-        // document.write(num1+num2+"<br>");//1+10 = 110
-        // document.write(num1-num2+"<br>");//1-10 = -9
-        document.write(num1*num2+"<br>");//10 /"hi"*10 = NaN
-        document.write(num1/num2+"<br>");//0.1 /"hi"/10 = NaN
-        document.write(num1%num2+"<br>");//1 /"hi"%10 = NaN
-        
+        num1 = "1"; // String with numeric value "1"
+        num2 = 10;  // Numeric value 10
 
+        // Demonstrating the impact of performing operations between a string and a number
 
+        // Concatenation with + (string and number)
+        // document.write(num1 + " " + num2 + "<br>"); // Outputs: "1 10"
+
+        // Addition operator with string and number (results in string concatenation)
+        // document.write(num1 + num2 + "<br>"); // Outputs: "110" (concatenation)
+
+        // Subtraction operator with string and number (results in NaN because "1" is a string)
+        // document.write(num1 - num2 + "<br>"); // Outputs: -9
+
+        // Multiplication operator with string and number (results in NaN because "1" is a string)
+        document.write(num1 * num2 + "<br>"); // Outputs: NaN (Not a Number)
+
+        // Division operator with string and number (results in NaN because "1" is a string)
+        document.write(num1 / num2 + "<br>"); // Outputs: NaN (Not a Number)
+
+        // Modulus operator with string and number (results in NaN because "1" is a string)
+        document.write(num1 % num2 + "<br>"); // Outputs: NaN (Not a Number)
     </script>
-    
 </body>
+
 </html>

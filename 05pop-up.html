@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8"> <!-- Specifies the character encoding for the HTML document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures proper scaling on mobile devices -->
+    <title>Document</title> <!-- Title of the document, displayed in the browser tab -->
 </head>
 <body>
 
     <script>
-        window.alert("Alert..!")
-        window.confirm("Confirm..!")
-        window.prompt("5 + 5 ? =..!")
+        // Displays an alert box with the message "Alert..!"
+        window.alert("Alert..!");
 
+        // Displays a confirmation dialog box with the message "Confirm..!"
+        // The user can choose "OK" or "Cancel".
+        window.confirm("Confirm..!");
+
+        // Displays a prompt dialog box asking the user to input a value for "5 + 5 ? =..!"
+        // The user's input is returned as a string.
+        window.prompt("5 + 5 ? =..!");
+
+        // Opens the print dialog, allowing the user to print the current document.
         window.print();
 
+        // The following code is commented out:
+        // This would display a confirmation dialog, and based on the user's response,
+        // it either writes "123" to the document or writes "ELSE".
        
-        // if(confirm("Confirm..!"))
+        // if(confirm("Confirm..!")) 
         // {
         //     document.write("123")
         // }

@@ -1,33 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8"> <!-- Specifies the character encoding for the HTML document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures proper scaling on mobile devices -->
+    <title>Document</title> <!-- Title of the document, displayed in the browser tab -->
 </head>
 <body>
+    <!-- An h1 element with an onclick event that triggers the pararemove() function -->
     <h1 id="i1" onclick="pararemove()">hello</h1>
+
+    <!-- A div with the class 't1', which currently displays "div 1" -->
     <div class="t1">div 1</div>
+
+    <!-- A paragraph with the id 'para', containing some placeholder text -->
     <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero voluptatem velit iusto provident reprehenderit sint perspiciatis accusantium, repellat, est ea quo excepturi earum magni sit maxime maiores, enim officiis commodi.</p>
+
+    <!-- A link with the id 'a1', pointing to 'xyz.html' -->
     <a href="xyz.html" id="a1">LINK</a>
+
+    <!-- A text input field with the id 'inp1' and a default value of "INPUT into TEXT" -->
     <input type="text" id="inp1" value="INPUT into TEXT">
+
+    <!-- An image element with the id 'img1'. The 'alt' text is displayed if the image is not available -->
     <img src="im.jpg" alt="img Not Available" id="img1">
 
     <script>
-        function pararemove(){
-            x=document.getElementById('para')
-            x.style.color='red'
-
+        // This function is triggered when the h1 element is clicked
+        function pararemove() {
+            // Retrieves the paragraph element by its ID and stores it in the variable 'x'
+            x = document.getElementById('para');
+            // Changes the text color of the paragraph element to red
+            x.style.color = 'red';
         }
-        
-        // var z=document.getElementById('inp1')
-        // let img1=document.getElementById("img1")
-        // img1.alt=z.value
+
+        // The following lines of code are commented out:
+
+        // var z = document.getElementById('inp1') // Retrieves the input element with the id 'inp1'
+        // let img1 = document.getElementById("img1") // Retrieves the image element with the id 'img1'
+        // img1.alt = z.value // Sets the alt text of the image to the value of the input field
+
+        // Logs the current alt text of the image element to the console
         console.log(img1.alt)
 
-        // alert(window.document.getElementById('i1').innerHTML )
+        // This line would trigger an alert with the inner HTML content of the h1 element if uncommented
+        // alert(window.document.getElementById('i1').innerHTML)
         
     </script>
-    
 </body>
 </html>
