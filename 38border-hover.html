@@ -6,71 +6,67 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 	<style type="text/css">
+		/* Styling for the div with class "test" */
 		.test {
-			height: 400px;
-			width: 250px;
-			background: black;
-			margin: 100px auto;
-			position: relative;
-			overflow: hidden;
-
+			height: 400px; /* Fixed height of the div */
+			width: 250px; /* Fixed width of the div */
+			background: black; /* Black background for the div */
+			margin: 100px auto; /* Center the div horizontally with a 100px margin at the top and bottom */
+			position: relative; /* Position the div relative to its normal position */
+			overflow: hidden; /* Hide any overflow content */
 		}
 
+		/* Styling for the ::before pseudo-element of the .test div */
 		.test::before {
-			content: "";
-			position: absolute;
-			height: 600px;
-			width: 600px;
-			background: conic-gradient(red 0deg, red 90deg, transparent 130deg, transparent 180deg, blue 90deg, blue 180deg, transparent 310deg, transparent 360deg);
-
-			/* background: linear-gradient(red,blue,green,white,yellow,purple,pink,magenta); */
-			top: 50%;
+			content: ""; /* Empty content for the pseudo-element */
+			position: absolute; /* Absolute positioning relative to the .test div */
+			height: 600px; /* Height of the pseudo-element */
+			width: 600px; /* Width of the pseudo-element */
+			
+			/* Conic gradient with specific colors and angles */
+			background: conic-gradient(red 0deg, red 90deg, transparent 130deg, transparent 180deg, 
+			                           blue 90deg, blue 180deg, transparent 310deg, transparent 360deg);
+			
+			/* Center the pseudo-element within the .test div */
+			top: 50%; 
 			left: 50%;
-
-			transform: translate(-50%, -50%) rotate(-360deg);
-			transition: 2s ;
+			transform: translate(-50%, -50%) rotate(-360deg); /* Initial rotation and centering */
+			transition: 2s; /* Smooth transition over 2 seconds */
 		}
 
+		/* Change the rotation on hover for the ::before pseudo-element */
 		.test:hover::before {
-
-			transform: translate(-50%, -50%) rotate(360deg);
+			transform: translate(-50%, -50%) rotate(360deg); /* Rotate the element 360 degrees on hover */
 		}
 
+		/* Styling for the ::after pseudo-element of the .test div */
 		.test::after {
-			content: "";
-			position: absolute;
-			height: 380px;
-			width: 240px;
-			background: black;
-			top: 50%;
+			content: ""; /* Empty content for the pseudo-element */
+			position: absolute; /* Absolute positioning relative to the .test div */
+			height: 380px; /* Height slightly smaller than the .test div */
+			width: 240px; /* Width slightly smaller than the .test div */
+			background: black; /* Black background to cover the rotating element */
+			top: 50%; 
 			left: 50%;
-
-			transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%); /* Center the pseudo-element within the .test div */
 		}
 
+		/* Styling for the h1 element */
 		h1 {
-
-
-			background: linear-gradient(red, blue);
-			/* background: url(https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg); */
-			/* -o-background-clip: text;
-  -moz-background-clip: text; */
-			-webkit-background-clip: text;
-
-			color: transparent;
-
-
+			background: linear-gradient(red, blue); /* Linear gradient background from red to blue */
+			-webkit-background-clip: text; /* Clip the background to the text (visible only in WebKit browsers) */
+			color: transparent; /* Make the text color transparent, allowing the gradient to show through */
 		}
 	</style>
 </head>
 
 <body>
 
+	<!-- Gradient clipped text with the h1 element -->
 	<h1>SOME TEXT</h1>
 
-	<div class="test">
-
-	</div>
+	<!-- Div with a dynamic rotating background -->
+	<div class="test"></div>
 
 </body>
 

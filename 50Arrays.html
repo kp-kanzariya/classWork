@@ -1,40 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
     <script>
-"use strict";
-       const arr = ["apple","orange","kiwi"];
-    //    arr.reverse();
-    //     document.write(arr)
+        "use strict";  // Enforces strict mode which helps catch common coding errors and "unsafe" actions.
 
-   const x =  arr.forEach((v,i, ar)=>{
-        console.log(v) //use to print value index  and array
-    //    return (i + " => " + v + "<br>") //forEach cant return a value //it gives undefined
-    })
+        // Initialize an array with three fruit names
+        const arr = ["apple", "orange", "kiwi"];
 
-   const y =  arr.map((v,i ,ar)=>{
-        return (i + " => " + v + "<br>" +ar) //map can print and return array
-    })
+        // Reverses the array order (uncomment to use)
+        // arr.reverse();
+        // document.write(arr);
 
-    console.log(y)
+        // Using forEach to iterate over the array
+        const x = arr.forEach((v, i, ar) => {
+            console.log(v);  // Logs each value of the array to the console
+            // forEach cannot return a value; it returns undefined.
+            // return (i + " => " + v + "<br>"); // This return statement is ignored
+        });
 
-    const arrData = arr.map(
-        (v)=>{
-        // console.log(v)
-        return v;
-    }
-)
+        // Using map to iterate over the array and return a new array
+        const y = arr.map((v, i, ar) => {
+            return (i + " => " + v + "<br>" + ar);  // Returns a string for each element
+            // map returns a new array with the results of the callback function
+        });
 
-console.log(arrData)
+        // Logs the new array returned by map
+        console.log(y);
 
+        // Another map example to create a new array identical to the original
+        const arrData = arr.map((v) => {
+            // console.log(v);  // Logs each value (optional)
+            return v;  // Simply returns each value, creating a copy of the original array
+        });
+
+        // Logs the new array that is identical to the original
+        console.log(arrData);
 
     </script>
-    
+
 </body>
+
 </html>

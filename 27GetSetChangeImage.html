@@ -2,12 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Sets the character encoding to UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Ensures the page is responsive to different screen sizes -->
     <title>Document</title>
     <style>
+      /* Styles for the div containing the main image and buttons */
       div {
         position: relative;
       }
+
+      /* Styles for the right navigation button */
       #btn {
         position: absolute;
         top: 50%;
@@ -21,7 +26,9 @@
         color: #ffff;
         font-weight: bold;
       }
-      #btn1{
+
+      /* Styles for the left navigation button */
+      #btn1 {
         position: absolute;
         top: 50%;
         left: 5%;
@@ -37,49 +44,63 @@
     </style>
   </head>
   <body>
+
+    <!-- Placeholder image that can be set by clicking the "Get Image" button -->
     <img id="i1" src="" height="100px" width="100px" alt="" />
 
+    <!-- Static image displayed on the page -->
     <img id="i2" src="img/img1.jpg" height="100px" width="100px" alt="" />
 
+    <!-- Main image that will change when the navigation buttons are clicked -->
     <div>
       <img id="i3" src="img/img2.jpg" height="400px" width="100%" alt="" />
+      <!-- Right navigation button to change images -->
       <button onclick="changeImages()" id="btn"> > </button>
+      <!-- Left navigation button to change images -->
       <button onclick="changeImages()" id="btn1"> < </button>
     </div>
 
+    <!-- Button to set the first image -->
     <button onclick="getImage()">Get Image</button>
+    <!-- Button to change the second image -->
     <button onclick="setImage()">Set Image</button>
 
     <script>
+      // Selects the images by their respective IDs
       img1 = document.getElementById("i1");
-      
       img2 = document.getElementById("i2");
-
       img3 = document.getElementById("i3");
 
-      console.log(img3.src); //http://127.0.0.1:5500/i1.png
+      console.log(img3.src); // Logs the source of the third image
 
+      // Test function that writes "hi" to the document
       function test() {
         document.write("hi<bR>");
       }
-      test();
+      test(); // Calls the test function to output text
 
+      // Function to change the main image (img3) when navigation buttons are clicked
       function changeImages() {
+        // If img3 currently shows "img1.jpg", change to "img2.jpg"
         if (img3.src.match("img/img1.jpg")) {
           img3.src = "img/img2.jpg";
-        } else if (img3.src.match("img/img2.jpg")) {
+        }
+        // If img3 shows "img2.jpg", change to "img3.jpg"
+        else if (img3.src.match("img/img2.jpg")) {
           img3.src = "img/img3.jpg";
-        } else {
+        }
+        // Otherwise, cycle back to "img1.jpg"
+        else {
           img3.src = "img/img1.jpg";
         }
       }
 
-        // setInterval('changeImages()',1000)
-
+      // Function to set the source of the first image (img1)
       function getImage() {
         img1.src = "img/img1.jpg";
       }
 
+      // Function to change the source of the second image (img2)
       function setImage() {
         img2.src = "img/img2.jpg";
       }

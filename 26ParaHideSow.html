@@ -2,37 +2,52 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Sets the character encoding to UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Ensures the webpage is responsive to different screen sizes -->
     <title>Document</title>
+    <!-- Title of the webpage -->
   </head>
   <body>
+    <!-- A simple paragraph with placeholder text -->
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore minima,
       magni blanditiis mollitia iusto harum iste omnis voluptate laudantium a
       debitis minus sint tempora molestias nemo voluptatibus hic quas assumenda.
     </p>
 
+    <!-- Button to hide the paragraph -->
     <button onclick="HidePara()">Hide</button>
+    <!-- Button to show the paragraph -->
     <button onclick="ShowPara()">Show</button>
+    <!-- Button to toggle (hide/show) the paragraph -->
     <button onclick="HideShow()">Hide-Show</button>
+
     <script>
+      // Selects the first <p> element in the document and stores it in a variable 'p1'
       let p1 = document.querySelector("p");
 
+      // Function to hide the paragraph by setting its display property to 'none'
       function HidePara() {
         p1.style.display = "none";
       }
+
+      // Function to show the paragraph by setting its display property to 'block'
       function ShowPara() {
         p1.style.display = "block";
       }
 
+      // Function to toggle the visibility of the paragraph
       function HideShow() {
+        // If the paragraph is currently displayed, hide it
         if (p1.style.display == "block") {
           p1.style.display = "none";
-        //   console.log(p1.style.display)
+        //   console.log(p1.style.display) // For debugging purposes
         }
+        // Otherwise, show the paragraph
         else{
             p1.style.display = "block";
-            // console.log(p1.style.display)
+            // console.log(p1.style.display) // For debugging purposes
         }
       }
     </script>

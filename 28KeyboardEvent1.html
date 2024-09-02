@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <!-- Sets the character encoding to UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensures the page is responsive to different screen sizes -->
     <title>Document</title>
 </head>
+
 <body>
-
-    <!-- <input type="text" onkeypress="getText()"> -->
-
+    <!-- Input field that triggers the getText() function on the keydown event -->
     <input type="text" onkeydown="getText()">
 
-    <!-- <input type="text" onkeyup="getText()"> -->
-
-    
+    <!-- Textarea element where the content from the input field will be displayed -->
     <textarea name="" id=""></textarea>
 
     <script>
+        // Selects the input and textarea elements
         inp = document.querySelector('input');
+        txt = document.querySelector('textarea');
 
-        txt = document.querySelector('textarea')
+        // Function that updates the content of the textarea with the value of the input field
+        function getText() {
+            txt.innerHTML = inp.value;
+        }
 
-// console.log(inp,txt)
-
-
-
-function getText()
-{
-    txt.innerHTML = inp.value
-}
-getText()
+        // Optionally call getText() initially to update the textarea with any default input value
+        getText();
     </script>
-    
+
 </body>
+
 </html>

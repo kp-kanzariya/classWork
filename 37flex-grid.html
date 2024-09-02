@@ -5,64 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
+        /* Apply box-sizing to all elements */
         *{box-sizing: border-box;}
-        .container 
-        {
-            background: lightblue;
-            padding: 20px;
-        }
-        .row 
-        {
-            background: lightcoral;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px 0;
+
+        /* Styling for the container div */
+        .container {
+            background: lightblue; /* Light blue background for the container */
+            padding: 20px; /* Padding inside the container */
         }
 
-        .col 
-        {
-            border:2px solid;
-            flex-basis: 250px;
-            height: 200px;
-            /* flex-grow: 1; */
-            /* background: url(https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg); */
+        /* Styling for the row div */
+        .row {
+            background: lightcoral; /* Light coral background for the row */
+            display: flex; /* Use flexbox layout */
+            flex-wrap: wrap; /* Allow flex items to wrap to the next line */
+            justify-content: center; /* Center the flex items horizontally */
+            gap: 20px; /* Space between the flex items */
+            padding: 20px 0; /* Padding at the top and bottom of the row */
         }
-        /* .col:nth-child(2)
-        {
-            background: url(https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg);
-        } */
 
-        .col1 
-        {
-            background: url(https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg);
-
-            /* background-size: cover; */
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
+        /* Styling for each column div */
+        .col {
+            border: 2px solid; /* Border around each column */
+            flex-basis: 250px; /* Base width of each column */
+            height: 200px; /* Fixed height for each column */
         }
-        img 
-        {
-           height: 100%;
-           width: 100%;
-           /* object-fit: cover; */
-           object-fit: contain;
-           object-fit:scale-down;
+
+        /* Specific styling for the column with class "col1" */
+        .col1 {
+            background: url(https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg); /* Set a background image */
+            background-size: contain; /* Contain the background image within the element */
+            background-repeat: no-repeat; /* Prevent the background image from repeating */
+            background-position: center; /* Center the background image within the element */
+        }
+
+        /* Styling for images within the columns */
+        img {
+            height: 100%; /* Image height fills the column height */
+            width: 100%; /* Image width fills the column width */
+            object-fit: contain; /* Ensure the image maintains its aspect ratio */
+            object-fit: scale-down; /* If the image is too large, it will scale down to fit */
         }
     </style>
 </head>
 <body>
     
     <div class="container">
+        <!-- A row containing four columns -->
         <div class="row">
+            <!-- First column with default styling -->
             <div class="col">col 1</div>
+            
+            <!-- Second column with additional background image styling -->
             <div class="col col1">col 2</div>
+            
+            <!-- Third column with default styling -->
             <div class="col">col 3</div>
+            
+            <!-- Fourth column containing an image element -->
             <div class="col">
-                <img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="" >
+                <img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="">
             </div>
         </div>
     </div>

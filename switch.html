@@ -1,54 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>switch case</title>
 </head>
+
 <body>
     number1: <input id="n1" type="number" value="12">
     number2 <input id="n2" type="number" value="5">
     <button value="+" onclick="cal('+')">+</button>
     <button value="-" onclick="cal('-')">-</button>
-    <button value="*"  onclick="cal('*')">*</button>
-    <button value="/"  onclick="cal('/')">/</button>
+    <button value="*" onclick="cal('*')">*</button>
+    <button value="/" onclick="cal('/')">/</button>
     <button value="%" onclick="cal('%')">%</button>
 
     <script>
-        n1= document.getElementById('n1')
-        n2= document.getElementById('n2')
+        n1 = document.getElementById('n1')
+        n2 = document.getElementById('n2')
         // btnop=document.querySelector('button')
-num1=n1.value
-num2=n2.value
-// op=btnop.value
-// document.write(typeof(op))
-num11=parseInt(num1)
-num22=parseInt(num2)
-// op1=parseInt(op)
-// document.write(typeof(num11))
+        num1 = n1.value
+        num2 = n2.value
+        // op=btnop.value
+        // document.write(typeof(op))
+        num11 = parseInt(num1)
+        num22 = parseInt(num2)
+        // op1=parseInt(op)
+        // document.write(typeof(num11))
 
-// document.write(n1 ,n2, btnop, op)
-function cal(op1){
-        switch(op1){
-            case '+':
-                document.write(num11 + num22)
-                break;
-            case '-':
-                document.write(num1 - num2)
-                break;
-            case '*':
-                document.write(num1 * num2)
-                break;
-            case '/':
-                document.write(num1 / num2)
-                break;
-            case '%':
-                document.write(num1 % num2)
-                break;
+        // document.write(n1 ,n2, btnop, op)
+        function cal(op1) {
+            switch (op1) {
+                case '+':
+                    document.write(num11 + num22)
+                    break;
+                case '-':
+                    document.write(num1 - num2)
+                    break;
+                case '*':
+                    document.write(num1 * num2)
+                    break;
+                case '/':
+                    document.write(num1 / num2)
+                    break;
+                case '%':
+                    document.write(num1 % num2)
+                    break;
 
-    
+
+            }
         }
-    }
     </script>
 </body>
+
 </html>

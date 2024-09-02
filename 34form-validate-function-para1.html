@@ -5,63 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        #test 
-        {
-            /* background: lightblue; */
+        /* Styling for the input field with id "test" */
+        #test {
+            /* Light blue background color commented out */
             border: none;
             outline: none;
-            border-bottom: 3px solid #000;
-            border-radius: 10px;
+            border-bottom: 3px solid #000; /* Black bottom border */
+            border-radius: 10px; /* Rounded corners */
         }
     </style>
   </head>
   <body>
 
+    <!-- Input field with id "test" -->
     <input type="text" id="test">
    
-   
-      <form>
-        Name: <input type="text" id="name1" onblur="ValidateForm(name1,nmErr)" />
-        <b id="nmErr"></b>
-        <br /><br />
+    <form>
+      <!-- Name input field with onblur event to validate on losing focus -->
+      Name: <input type="text" id="name1" onblur="ValidateForm(name1,nmErr)" />
+      <!-- Placeholder for name error message -->
+      <b id="nmErr"></b>
+      <br /><br />
 
-        Mobile: <input type="text" id="mobile" onblur="ValidateForm(mobile,mbErr)" />
-        <b id="mbErr"></b>
-        <br /><br />
-    
-       
-      </form>
+      <!-- Mobile input field with onblur event to validate on losing focus -->
+      Mobile: <input type="text" id="mobile" onblur="ValidateForm(mobile,mbErr)" />
+      <!-- Placeholder for mobile error message -->
+      <b id="mbErr"></b>
+      <br /><br />
+    </form>
   
-
     <script>
+      // Function to validate input fields
+      function ValidateForm(input, bTag) {
+        console.log(input, bTag); // Log input element and associated error message tag for debugging
 
-
-    //   nm = document.getElementById("name");
-    //   nmErr = document.getElementById("nmErr");
-    //   mb = document.getElementById("mobile");
-    //   mbErr = document.getElementById("mbErr");
-
-     // x=1;
-function ValidateForm(input,bTag)
-{
-  console.log(input,bTag)
-//   console.log(input.value)
-  if(input.value == "")
-  {
-    bTag.innerHTML = "* Required..!"
-    bTag.style.color ="red"
-    input.style.border ="2px solid red"
-  }
-  else 
-  {
-    bTag.innerHTML = "OK"
-     bTag.style.color ="green"
-     input.style.border ="2px solid green"
-  }
-}
-
-
-
+        // If the input field is empty, show error message and apply red border
+        if(input.value == "") {
+          bTag.innerHTML = "* Required..!";
+          bTag.style.color = "red";
+          input.style.border = "2px solid red";
+        } 
+        // If input is filled, show "OK" message and apply green border
+        else {
+          bTag.innerHTML = "OK";
+          bTag.style.color = "green";
+          input.style.border = "2px solid green";
+        }
+      }
     </script>
   </body>
 </html>

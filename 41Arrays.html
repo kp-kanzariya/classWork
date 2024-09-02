@@ -8,133 +8,114 @@
 </head>
 
 <body>
-  <!-- Array: collection of multiple values of any type
-    array index/key/position always starts with 0
+  <!-- 
+    Array: A collection of multiple values of any type. 
+    The array index (or key/position) always starts with 0.
 
-    var/let/const arr = [val1,"val2",true,[],{},fun(){}]
+    Examples of array initialization:
+    var/let/const arr = [val1, "val2", true, [], {}, function(){}]
 
-    Array Length/SIZE = varName.length 
-    TOTAL num of values stored 
+    Array Length/SIZE: The total number of values stored in the array is accessed using varName.length.
 
-    arr =[1,"hi",true]
+    Example:
+    arr = [1, "hi", true]
+    
+    Array Types:
 
-    Types:
+    1. Indexed Array:
+       arr = ["kruparth", 22, "React"]
+       arr[0] = "kruparth"
+       arr[1] = 22
+       arr[2] = "React"
 
-    1. Indexed Array
+    2. Associative Array (or Object):
+       arr = {name: "kruparth", age: 22, course: "React"} 
 
-    arr = ["kruparth",22,"React"]
+    3. Multi-dimensional Array:
+       arr = [[1, 2]]
+  -->
 
-    arr[0]= kruparth
-    arr[1]=22
-    arr[2] =React
-
-    2. Associative array (object)
-
-    arr = [name=>"kruparth",age=>22,course=>"React"]
-
-    arr = {'name':"kruparth","age":22,course:"React"} //object
-
-    3. Multi-dimensional 
-
-    arr = [[1,2]] -->
-
-  <h1 id="i1"></h1>
+  <h1 id="i1"></h1> <!-- This is an empty heading that could be used to display array contents -->
 
   <script>
-
+    // Initializing an array with different data types
     let arr = [12, "hi", 123, 45654];
 
-    //   varname(arr).method(forEach(functionName))
-
-    //  arr.forEach(xyz)
-
-    //  function xyz(v,k)
-    //  {
-    //     document.write(k+ "=>"+ v + "<br>")
-    //  }
-
+    // Using the forEach method to iterate over each element in the array
+    // arr.forEach(callbackFunction) -> Applies the callback function to each element in the array
+    
+    // Example 1: Using a named function as the callback
     arr.forEach(function xyz(v, k) {
-      document.write(k + "=>" + v + "<br>")
-    })
+      document.write(k + " => " + v + "<br>"); // Writes the index (k) and value (v) to the document
+    });
 
-    document.write("<br><br>")
+    document.write("<br><br>"); // Adds some spacing between outputs
 
+    // Example 2: Using an anonymous function directly inside forEach
     arr.forEach(function (v, k) {
-      document.write(k + "=>" + v + "<br>")
-    })
+      document.write(k + " => " + v + "<br>"); // Similar to the above example
+    });
 
-    document.write("<br><br>")
+    document.write("<br><br>");
+
+    // Example 3: Using an arrow function inside forEach
     arr.forEach((v, k) => {
-      document.write(k + "=>" + v + "<br>")
-    })
+      document.write(k + " => " + v + "<br>"); // Similar to the previous examples but using an arrow function
+    });
 
+    // The following commented-out code shows other ways to iterate over arrays:
 
-
-    //   for(xyz of var)
-    //   {
-
-    //   }
-
-    // for(xyz of arr)
-    //   {
-    //     document.write(xyz + "<br>");//values
-    //   }
-
-    //   for(xyz1 in arr)
-    //   {
-    //     document.write(xyz1 + "<br>");//index
-    //     // document.write(arr[xyz1])
-    //   }
-
-
-    //       for(ramilaben in varname)
-    //   {
-
-    //   }
-
-    // for(i in arr)
-    // {
-    //     // document.write(i);//index 0 1 2
-    //     document.write(arr[i] + "<br>")
+    // for...of loop: Iterates over the values of the array
+    // for (xyz of arr) {
+    //   document.write(xyz + "<br>");
     // }
 
-    // for(i=0;i<arr.length;i++)//i=3;3<3;3++
-    // {
-    //     // document.write(i);//0 1 2
-    //     document.write(arr[i] + "<br>")
+    // for...in loop: Iterates over the indexes of the array
+    // for (xyz1 in arr) {
+    //   document.write(xyz1 + "<br>"); // Prints indexes (0, 1, 2, ...)
+    //   // document.write(arr[xyz1]); // Accessing the value at the index xyz1
     // }
 
-    // j=0
-    // while(j<arr.length)
-    // {
-    //     document.write(arr[j]+"<br>")
-    //     j++;
+    // Basic for loop
+    // for (i = 0; i < arr.length; i++) {
+    //   document.write(arr[i] + "<br>"); // Prints values in the array
     // }
 
-    // z=0;
+    // While loop: Iterates over the array until the condition (j < arr.length) is false
+    // j = 0;
+    // while (j < arr.length) {
+    //   document.write(arr[j] + "<br>");
+    //   j++;
+    // }
 
-    // do{
-    //     document.write(arr[z]+"<br>");
-    //     z++;
-    // }while(z<arr.length)
-    // document.write(arr.length)
-    // document.write(arr[0])
-    // document.write(arr[1])
-    // document.write(arr[2])
-    // console.log(arr)
-    // document.write(arr)
-    // document.getElementById('i1').innerHTML = arr
+    // Do-while loop: Similar to while loop but guarantees at least one execution of the loop body
+    // z = 0;
+    // do {
+    //   document.write(arr[z] + "<br>");
+    //   z++;
+    // } while (z < arr.length);
 
+    // Displaying array details
+    // document.write(arr.length); // Writes the length of the array
+    // document.write(arr[0]); // Writes the first element of the array
+    // document.write(arr[1]); // Writes the second element of the array
+    // document.write(arr[2]); // Writes the third element of the array
+    // console.log(arr); // Logs the array to the console
+    // document.write(arr); // Writes the entire array to the document
+    // document.getElementById('i1').innerHTML = arr; // Displays the array inside the h1 element
 
+    // Example of iterating over an object (Associative Array/JavaScript Object)
     const person = {
       firstName: 'John',
       lastName: 'Doe',
       age: 30
     };
 
+    // Using for...in loop to iterate over the keys of the object
     for (const key in person) {
-      document.write(`${key}:=> ${person[key]} <br /> `);
+      document.write(`${key}:=> ${person[key]} <br /> `); // Prints key and value pairs
     }
+
   </script>
 </body>
 

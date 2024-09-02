@@ -1,35 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    Name : <input type="text" />
-    <b id="nmErr"></b>
-    
-    <br />
-    <button onclick="valiadte()">validate</button>
 
-    <script>
-      name1 = document.querySelector("input");
-      btn = document.querySelector("button");
-      console.log(name1.value, btn);
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
 
-     function valiadte()
-     {
-        if (name1.value == " ") {  //space 
-        // alert("dslkfj");
-        document.getElementById('nmErr').innerHTML = " * Required"
+<body>
+  <!-- Input field for the name -->
+  Name : <input type="text" />
+  
+  <!-- Error message will be displayed here if validation fails -->
+  <b id="nmErr"></b>
 
-        document.getElementById('nmErr').style.color= "red"
+  <br />
+
+  <!-- Button to trigger the validation function -->
+  <button onclick="validate()">validate</button>
+
+  <script>
+    // Grabbing the input field and button elements from the DOM
+    name1 = document.querySelector("input");
+    btn = document.querySelector("button");
+
+    // Logging the initial values of the input and button elements
+    console.log(name1.value, btn);
+
+    // Validation function to check if the input field is empty or contains only a space
+    function validate() {
+      if (name1.value == " ") {  // Check for a single space as input
+        // If the input is invalid, display an error message in red
+        document.getElementById('nmErr').innerHTML = " * Required";
+        document.getElementById('nmErr').style.color = "red";
       }
-      else 
-      {
-        document.getElementById('nmErr').innerHTML = " "
+      else {
+        // If the input is valid, clear the error message
+        document.getElementById('nmErr').innerHTML = " ";
       }
-     }
-    </script>
-  </body>
+    }
+  </script>
+</body>
+
 </html>

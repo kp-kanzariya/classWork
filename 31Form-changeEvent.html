@@ -7,31 +7,31 @@
 </head>
 <body>
 
+    <!-- Input field for the price, initialized with a value of 200 -->
     Price: <input type="text" value="200" id="price">
+    
+    <!-- Dropdown select for quantity, triggers getPrice() function when the value changes -->
     <select name="" id="quantity" onchange="getPrice()">
         <option hidden> --- Select Quantity --- </option>
-        <option>1</option>
-        <option value="2">2</option>
-        <option disabled value="3">3</option>
-        <option value="40">4</option>
+        <option>1</option>  <!-- No value attribute, defaults to the text '1' -->
+        <option value="2">2</option>  <!-- Has a value of 2 -->
+        <option disabled value="3">3</option>  <!-- Disabled option, can't be selected -->
+        <option value="40">4</option>  <!-- Has a value of 40 -->
     </select>
 
+    <!-- The calculated result will be displayed in this <b> tag -->
     <b id="res"></b>
+
     <script>
+       // Getting references to the price input and quantity select elements
        p = document.querySelector('#price');
-       q =  document.getElementById('quantity')
-    //    console.log(p,q)//input/select
-    //    console.log(p.value)//200
-    //    console.log(q.value)
+       q =  document.getElementById('quantity');
 
-    //    console.log(p.value*q.value)//200*1 200
-
-       function getPrice()
-       {
-        document.getElementById('res').innerHTML = p.value*q.value
+       // Function to calculate and display the total price based on selected quantity
+       function getPrice() {
+           // Multiply the price by the selected quantity and display it in the <b> tag
+           document.getElementById('res').innerHTML = p.value * q.value;
        }
-       
-
     </script>
     
 </body>

@@ -1,49 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-   
-   
-      <form>
-        Name: <input type="text" id="name" />
-        <b id="nmErr"></b>
-        <br /><br />
 
-        Mobile: <input type="text" id="mobile" />
-        <b id="mbErr"></b>
-        <br /><br />
-    
-        <input onclick="return val()" type="submit" value="Validate" />
-      </form>
-  
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
 
-    <script>
-      nm = document.getElementById("name");
-      nmErr = document.getElementById("nmErr");
-      mb = document.getElementById("mobile");
-      mbErr = document.getElementById("mbErr");
+<body>
+  <!-- Form with two input fields: Name and Mobile -->
+  <form>
+    <!-- Name input field and error message placeholder -->
+    Name: <input type="text" id="name" />
+    <b id="nmErr"></b> <!-- Error message for Name -->
+    <br /><br />
 
-      console.log(nm, mb);
-      function val() {
-        if (nm.value == "") {
-        //   alert("Name");
-        nmErr.innerHTML = " *Required..!"
-        nmErr.style.color= "red"
-          return  false;
-         
-        }
+    <!-- Mobile input field and error message placeholder -->
+    Mobile: <input type="text" id="mobile" />
+    <b id="mbErr"></b> <!-- Error message for Mobile -->
+    <br /><br />
 
-        if (mb.value == "") {
-        //   alert("mobile");
-        mbErr.innerHTML = " *Required..!"
-        mbErr.style.color= "red"
-          return  false;
-        }
+    <!-- Submit button that triggers validation -->
+    <input onclick="return val()" type="submit" value="Validate" />
+  </form>
+
+  <script>
+    // Get references to the input fields and error message elements
+    nm = document.getElementById("name");
+    nmErr = document.getElementById("nmErr");
+    mb = document.getElementById("mobile");
+    mbErr = document.getElementById("mbErr");
+
+    console.log(nm, mb); // Log the input field elements to the console for debugging
+
+    // Function to validate the form fields
+    function val() {
+      // Check if the Name field is empty
+      if (nm.value == "") {
+        // If empty, display an error message and set its color to red
+        nmErr.innerHTML = " *Required..!";
+        nmErr.style.color = "red";
+        return false; // Prevent form submission
       }
-    </script>
-  </body>
+
+      // Check if the Mobile field is empty
+      if (mb.value == "") {
+        // If empty, display an error message and set its color to red
+        mbErr.innerHTML = " *Required..!";
+        mbErr.style.color = "red";
+        return false; // Prevent form submission
+      }
+    }
+  </script>
+</body>
+
 </html>

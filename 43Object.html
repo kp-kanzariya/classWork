@@ -3,34 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/classWork/img/logo.svg">
+    <link rel="icon" href="/classWork/img/logo.svg"> <!-- Link to a favicon -->
     <title>Document</title>
 </head>
 <body>
     <script>
+        // Creating an object with various properties and values
+        // Object syntax: const/var/let varName = {property1: value1, property2: value2, ...}
+        const obj = {34: 13453, xyz1: "hi", 'pataNahi': true, "dbQuote": 123};
 
-        // const/var/let vatName = {index:val1,index:val2}
-        const obj = {34:13453,xyz1:"hi",'pataNahi' :true,"dbQuote":123}
+        // Using a for...in loop to iterate over the properties of the object
+        for (xyz in obj) {
+            // The variable 'xyz' holds the property names (keys) during each iteration
+            // Writing the property name and corresponding value to the document
+            document.write(`${xyz} => ${obj[xyz]} <br />`);
+        }
 
-        
-        for(xyz in obj)
-    {
-        // document.write(xyz + "<br>")// 34 hi 
-        document.write(`${xyz} => ${obj[xyz]} <br />`)
-    }
+        // The following commented-out code would cause an error:
+        // for (x of obj)  
+        // {
+        //     document.write(x);
+        // }
+        // Explanation: The 'for...of' loop cannot be used directly on objects since objects are not iterable in this way.
 
-    // for(x of obj)  //object is not iterable
-    // {
-    //     document.write(x)
-    // }
-
-        
-        document.write(obj.dbQuote) 
-        document.write(obj[34])
-        document.write(obj['xyz1']) 
-        document.write(obj["pataNahi"])
-        document.write(obj['dbQuote'])
+        // Accessing and displaying object properties using both dot notation and bracket notation
+        document.write(obj.dbQuote);  // Accessing the "dbQuote" property using dot notation
+        document.write(obj[34]);      // Accessing the property with key 34 using bracket notation
+        document.write(obj['xyz1']);  // Accessing the "xyz1" property using bracket notation
+        document.write(obj["pataNahi"]); // Accessing the "pataNahi" property using bracket notation
+        document.write(obj['dbQuote']);  // Accessing the "dbQuote" property using bracket notation
     </script>
-    
 </body>
 </html>
