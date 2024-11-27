@@ -48,7 +48,7 @@
       // Loop Example with `var`, `let`, and `const`:
       // `var` is function-scoped, so it will be accessible outside the loop.
       // `let` and `const` are block-scoped, so they will not be accessible outside the loop.
-      for (var i = 1; i < 4; i++) { // Replace `var` with `let` or `const` to see the difference
+      for (const i = 1; i < 4; i++) { // Replace `var` with `let` or `const` to see the difference
         document.write(i + "<br>"); // Outputs: 1, 2, 3 (inside the loop)
       }
       document.write(i + "<br>"); // Outputs: 4 (since `var` is function-scoped, `i` is accessible outside the loop)

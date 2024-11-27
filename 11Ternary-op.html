@@ -15,48 +15,48 @@
     // ** : Exponentiation (Power)
     // () : Parentheses to control order of operations
 
-    r1 = 4;
-    // Display the result of r1 squared
-    document.write(r1 * r1 + "<br>"); // Outputs: 16
+    // r1 = 4;
+    // // Display the result of r1 squared
+    // document.write(r1 * r1 + "<br>"); // Outputs: 16
 
-    // Display the result of r1 raised to the power of 4
-    document.write(r1 ** 4 + "<br>"); // Outputs: 256
+    // // Display the result of r1 raised to the power of 4
+    // document.write(r1 ** 4 + "<br>"); // Outputs: 256
 
-    // Alternative way to calculate r1 raised to the power of 4 using Math.pow()
-    document.write(Math.pow(r1, 4) + "<br>"); // Outputs: 256
+    // // Alternative way to calculate r1 raised to the power of 4 using Math.pow()
+    // document.write(Math.pow(r1, 4) + "<br>"); // Outputs: 256
 
-    // Display the value of PI from the Math object
-    document.write(Math.PI + "<br>"); // Outputs: 3.141592653589793
+    // // Display the value of PI from the Math object
+    // document.write(Math.PI + "<br>"); // Outputs: 3.141592653589793
 
-    // Date object to get the current date and time
-    xyz = new Date();
-    document.write(xyz); // Outputs the current date and time
+    // // Date object to get the current date and time
+    // xyz = new Date();
+    // document.write(xyz); // Outputs the current date and time
 
-    // Example of arithmetic operation with order of precedence
-    ex = 2 + 4 - 5 - 6 + 7; // Order of operations: 2 + (4 - 5 - 6 + 7) = 2 + 0 = 2
-    document.write(ex + "<br>"); // Outputs: 2
+    // // Example of arithmetic operation with order of precedence
+    // ex = 2 + 4 - 5 - 6 + 7; // Order of operations: 2 + (4 - 5 - 6 + 7) = 2 + 0 = 2
+    // document.write(ex + "<br>"); // Outputs: 2
 
-    // Demonstration of increment and decrement operators
-    no1 = 34;
-    document.write(no1 + "<br>"); // Outputs: 34
+    // // Demonstration of increment and decrement operators
+    // no1 = 34;
+    // document.write(no1 + "<br>"); // Outputs: 34
 
-    document.write(++no1 + "<br>"); // Pre-increment: Outputs 35, no1 is now 35
+    // document.write(++no1 + "<br>"); // Pre-increment: Outputs 35, no1 is now 35
 
-    document.write(no1++ + "<br>"); // Post-increment: Outputs 35, no1 is now 36
+    // document.write(no1++ + "<br>"); // Post-increment: Outputs 35, no1 is now 36
 
-    document.write(--no1 + "<br>"); // Pre-decrement: Outputs 35, no1 is now 35
+    // document.write(--no1 + "<br>"); // Pre-decrement: Outputs 35, no1 is now 35
 
-    document.write(no1-- + "<br>"); // Post-decrement: Outputs 35, no1 is now 34
+    // document.write(no1-- + "<br>"); // Post-decrement: Outputs 35, no1 is now 34
 
-    document.write(no1++ + "<br>"); // Post-increment: Outputs 34, no1 is now 35
+    // document.write(no1++ + "<br>"); // Post-increment: Outputs 34, no1 is now 35
 
-    // Conditional (Ternary) Operator and Logical Operators
-    // Example with logical NOT (!), AND (&&), and OR (||)
-    y = !(1 <= 1) && !(1 >= 1) ? "xyz" : "abc";
-    // !(1 <= 1) evaluates to false, !(1 >= 1) evaluates to false
-    // false && false evaluates to false
-    // Therefore, y = "abc"
-    document.write(y + "<br>"); // Outputs: abc
+    // // Conditional (Ternary) Operator and Logical Operators
+    // // Example with logical NOT (!), AND (&&), and OR (||)
+    // y = !(1 <= 1) && !(1 >= 1) ? "xyz" : "abc";
+    // // !(1 <= 1) evaluates to false, !(1 >= 1) evaluates to false
+    // // false && false evaluates to false
+    // // Therefore, y = "abc"
+    // document.write(y + "<br>"); // Outputs: abc
 
     // Comparison between number and string
     p = 1;
@@ -65,7 +65,7 @@
     // Ternary operator with comparison
     // p != q compares values, since p is a number and q is a string
     // They are not equal when compared loosely
-    test = (p != q) ? "xyz" : "abc";
+    test = (p !== q) ? "xyz" : "abc";
     document.write(test + "<br>"); // Outputs: xyz
 
   </script>
